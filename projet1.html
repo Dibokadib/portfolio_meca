@@ -63,8 +63,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'projet1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Projet 2" href="projet2.html" />
-    <link rel="prev" title="Salam to your Jupyter Book" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,6 +113,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -168,9 +168,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Projet 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="projet2.html">Projet 2</a></li>
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
 </ul>
 
@@ -434,151 +432,79 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">dolfinx</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">dolfinx</span> <span class="kn">import</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">fem</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">io</span><span class="p">,</span> <span class="n">default_scalar_type</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">dolfinx.fem.petsc</span> <span class="kn">import</span> <span class="n">LinearProblem</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Info    : Meshing 1D...
+Info    : [  0%] Meshing curve 1 (Line)
+Info    : [ 10%] Meshing curve 2 (Line)
+Info    : [ 20%] Meshing curve 3 (Line)
+Info    : [ 30%] Meshing curve 4 (Line)
+Info    : [ 40%] Meshing curve 5 (Line)
+Info    : [ 50%] Meshing curve 6 (Line)
+Info    : [ 60%] Meshing curve 7 (Line)
+Info    : [ 60%] Meshing curve 8 (Line)
+Info    : [ 70%] Meshing curve 9 (Line)
+Info    : [ 80%] Meshing curve 10 (Line)
+Info    : [ 90%] Meshing curve 11 (Line)
+Info    : [100%] Meshing curve 12 (Line)
+Info    : Done meshing 1D (Wall 0.000452333s, CPU 0.000633s)
+Info    : Meshing 2D...
+Info    : [  0%] Meshing surface 1 (Plane, Frontal-Delaunay)
+Info    : [ 20%] Meshing surface 2 (Plane, Frontal-Delaunay)
+Info    : [ 40%] Meshing surface 3 (Plane, Frontal-Delaunay)
+Info    : [ 60%] Meshing surface 4 (Plane, Frontal-Delaunay)
+Info    : [ 70%] Meshing surface 5 (Plane, Frontal-Delaunay)
+Info    : [ 90%] Meshing surface 6 (Plane, Frontal-Delaunay)
+Info    : Done meshing 2D (Wall 0.00200537s, CPU 0.001998s)
+Info    : Meshing 3D...
+Info    : 3D Meshing 1 volume with 1 connected component
+Info    : Tetrahedrizing 108 nodes...
+Info    : Done tetrahedrizing 116 nodes (Wall 0.00046275s, CPU 0.000417s)
+Info    : Reconstructing mesh...
+Info    :  - Creating surface mesh
+Info    :  - Identifying boundary edges
+Info    :  - Recovering boundary
+Info    : Done reconstructing mesh (Wall 0.00111971s, CPU 0.001041s)
+Info    : Found volume 1
+Info    : It. 0 - 0 nodes created - worst tet radius 1.07048 (nodes removed 0 0)
+Info    : 3D refinement terminated (110 nodes total):
+Info    :  - 0 Delaunay cavities modified for star shapeness
+Info    :  - 0 nodes could not be inserted
+Info    :  - 265 tetrahedra created in 7.42497e-05 sec. (3569038 tets/s)
+Info    : 0 node relocations
+Info    : Done meshing 3D (Wall 0.00219492s, CPU 0.002104s)
+Info    : Optimizing mesh...
+Info    : Optimizing volume 1
+Info    : Optimization starts (volume = 0.04) with worst = 0.0118885 / average = 0.739881:
+Info    : 0.00 &lt; quality &lt; 0.10 :        10 elements
+Info    : 0.10 &lt; quality &lt; 0.20 :         1 elements
+Info    : 0.20 &lt; quality &lt; 0.30 :         0 elements
+Info    : 0.30 &lt; quality &lt; 0.40 :         2 elements
+Info    : 0.40 &lt; quality &lt; 0.50 :         2 elements
+Info    : 0.50 &lt; quality &lt; 0.60 :        16 elements
+Info    : 0.60 &lt; quality &lt; 0.70 :        72 elements
+Info    : 0.70 &lt; quality &lt; 0.80 :        55 elements
+Info    : 0.80 &lt; quality &lt; 0.90 :        61 elements
+Info    : 0.90 &lt; quality &lt; 1.00 :        46 elements
+Info    : 11 edge swaps, 0 node relocations (volume = 0.04): worst = 0.0575622 / average = 0.766461 (Wall 9.36668e-05s, CPU 9.8e-05s)
+Info    : 12 edge swaps, 0 node relocations (volume = 0.04): worst = 0.341452 / average = 0.769237 (Wall 0.00011225s, CPU 0.00012s)
+Info    : No ill-shaped tets in the mesh :-)
+Info    : 0.00 &lt; quality &lt; 0.10 :         0 elements
+Info    : 0.10 &lt; quality &lt; 0.20 :         0 elements
+Info    : 0.20 &lt; quality &lt; 0.30 :         0 elements
+Info    : 0.30 &lt; quality &lt; 0.40 :         2 elements
+Info    : 0.40 &lt; quality &lt; 0.50 :         2 elements
+Info    : 0.50 &lt; quality &lt; 0.60 :        18 elements
+Info    : 0.60 &lt; quality &lt; 0.70 :        70 elements
+Info    : 0.70 &lt; quality &lt; 0.80 :        55 elements
+Info    : 0.80 &lt; quality &lt; 0.90 :        61 elements
+Info    : 0.90 &lt; quality &lt; 1.00 :        46 elements
+Info    : Done optimizing mesh (Wall 0.000229s, CPU 0.000249s)
+Info    : 110 nodes 530 elements
+Info    : Writing &#39;cylindre.msh&#39;...
+Info    : Done writing &#39;cylindre.msh&#39;
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;dolfinx&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>panel<span class="w"> </span>pyvista<span class="w"> </span>pyvista-panel
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: panel in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (1.5.3)
-Requirement already satisfied: pyvista in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (0.43.10)
-<span class=" -Color -Color-Red">ERROR: Could not find a version that satisfies the requirement pyvista-panel (from versions: none)</span>
-
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.2</span> -&gt; <span class=" -Color -Color-Green">24.3.1</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
-<span class=" -Color -Color-Red">ERROR: No matching distribution found for pyvista-panel</span>
-
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pyvista<span class="w"> </span>panel<span class="w"> </span>ipyvtklink<span class="w"> </span>holoviews
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyvista in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (0.43.10)
-Requirement already satisfied: panel in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (1.5.3)
-Requirement already satisfied: ipyvtklink in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (0.2.3)
-Collecting holoviews
-  Downloading holoviews-1.19.1-py3-none-any.whl.metadata (9.8 kB)
-Requirement already satisfied: matplotlib&gt;=3.0.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pyvista) (3.8.4)
-Requirement already satisfied: numpy&gt;=1.21.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pyvista) (1.26.4)
-Requirement already satisfied: pillow in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pyvista) (10.3.0)
-Requirement already satisfied: pooch in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pyvista) (1.8.2)
-Requirement already satisfied: scooby&gt;=0.5.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pyvista) (0.10.0)
-Requirement already satisfied: vtk in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pyvista) (9.3.0)
-Requirement already satisfied: bleach in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (6.1.0)
-Requirement already satisfied: bokeh&lt;3.7.0,&gt;=3.5.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (3.6.0)
-Requirement already satisfied: linkify-it-py in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (2.0.3)
-Requirement already satisfied: markdown in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (3.7)
-Requirement already satisfied: markdown-it-py in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (3.0.0)
-Requirement already satisfied: mdit-py-plugins in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (0.4.2)
-Requirement already satisfied: packaging in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (24.1)
-Requirement already satisfied: pandas&gt;=1.2 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (2.2.2)
-Requirement already satisfied: param&lt;3.0,&gt;=2.1.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (2.1.1)
-Requirement already satisfied: pyviz-comms&gt;=2.0.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (3.0.3)
-Requirement already satisfied: requests in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (2.32.3)
-Requirement already satisfied: tqdm in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (4.66.4)
-Requirement already satisfied: typing-extensions in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (4.12.2)
-Requirement already satisfied: ipycanvas&gt;=0.5.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipyvtklink) (0.13.3)
-Requirement already satisfied: ipyevents&gt;=0.8.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipyvtklink) (2.0.2)
-Requirement already satisfied: ipywidgets~=7.7 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipyvtklink) (7.8.5)
-Collecting colorcet (from holoviews)
-  Downloading colorcet-3.1.0-py3-none-any.whl.metadata (6.3 kB)
-Requirement already satisfied: Jinja2&gt;=2.9 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (3.1.4)
-Requirement already satisfied: contourpy&gt;=1.2 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (1.2.1)
-Requirement already satisfied: PyYAML&gt;=3.10 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (6.0.1)
-Requirement already satisfied: tornado&gt;=6.2 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (6.4.1)
-Requirement already satisfied: xyzservices&gt;=2021.09.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (2024.9.0)
-Requirement already satisfied: comm&gt;=0.1.3 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipywidgets~=7.7-&gt;ipyvtklink) (0.2.2)
-Requirement already satisfied: ipython-genutils~=0.2.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipywidgets~=7.7-&gt;ipyvtklink) (0.2.0)
-Requirement already satisfied: traitlets&gt;=4.3.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipywidgets~=7.7-&gt;ipyvtklink) (5.14.3)
-Requirement already satisfied: widgetsnbextension~=3.6.10 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipywidgets~=7.7-&gt;ipyvtklink) (3.6.10)
-Requirement already satisfied: ipython&gt;=4.0.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipywidgets~=7.7-&gt;ipyvtklink) (8.26.0)
-Requirement already satisfied: jupyterlab-widgets&lt;3,&gt;=1.0.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipywidgets~=7.7-&gt;ipyvtklink) (1.1.11)
-Requirement already satisfied: cycler&gt;=0.10 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from matplotlib&gt;=3.0.1-&gt;pyvista) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from matplotlib&gt;=3.0.1-&gt;pyvista) (4.53.0)
-Requirement already satisfied: kiwisolver&gt;=1.3.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from matplotlib&gt;=3.0.1-&gt;pyvista) (1.4.5)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from matplotlib&gt;=3.0.1-&gt;pyvista) (3.1.2)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from matplotlib&gt;=3.0.1-&gt;pyvista) (2.9.0)
-Requirement already satisfied: pytz&gt;=2020.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;panel) (2024.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;panel) (2024.1)
-Requirement already satisfied: six&gt;=1.9.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bleach-&gt;panel) (1.16.0)
-Requirement already satisfied: webencodings in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bleach-&gt;panel) (0.5.1)
-Requirement already satisfied: uc-micro-py in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from linkify-it-py-&gt;panel) (1.0.3)
-Requirement already satisfied: mdurl~=0.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from markdown-it-py-&gt;panel) (0.1.2)
-Requirement already satisfied: platformdirs&gt;=2.5.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pooch-&gt;pyvista) (4.2.2)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from requests-&gt;panel) (3.3.2)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from requests-&gt;panel) (3.7)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from requests-&gt;panel) (2.2.2)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from requests-&gt;panel) (2024.7.4)
-Requirement already satisfied: decorator in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (5.1.1)
-Requirement already satisfied: jedi&gt;=0.16 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.19.1)
-Requirement already satisfied: matplotlib-inline in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.1.7)
-Requirement already satisfied: prompt-toolkit&lt;3.1.0,&gt;=3.0.41 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (3.0.47)
-Requirement already satisfied: pygments&gt;=2.4.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (2.18.0)
-Requirement already satisfied: stack-data in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.6.2)
-Requirement already satisfied: pexpect&gt;4.3 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (4.9.0)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from Jinja2&gt;=2.9-&gt;bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (2.1.5)
-Requirement already satisfied: notebook&gt;=4.4.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (5.7.5)
-Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.8.4)
-Requirement already satisfied: pyzmq&gt;=17 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (26.0.3)
-Requirement already satisfied: jupyter-core&gt;=4.4.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (5.7.2)
-Requirement already satisfied: jupyter-client&gt;=5.2.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (8.6.2)
-Requirement already satisfied: nbformat in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (5.10.4)
-Requirement already satisfied: nbconvert in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (7.16.4)
-Requirement already satisfied: ipykernel in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (6.29.5)
-Requirement already satisfied: Send2Trash in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (1.8.3)
-Requirement already satisfied: terminado&gt;=0.8.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.18.1)
-Requirement already satisfied: prometheus-client in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.20.0)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.7.0)
-Requirement already satisfied: wcwidth in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from prompt-toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.2.13)
-Requirement already satisfied: executing&gt;=1.2.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from stack-data-&gt;ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (2.0.1)
-Requirement already satisfied: asttokens&gt;=2.1.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from stack-data-&gt;ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (2.4.1)
-Requirement already satisfied: pure-eval in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from stack-data-&gt;ipython&gt;=4.0.0-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.2.2)
-Requirement already satisfied: appnope in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipykernel-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.1.4)
-Requirement already satisfied: debugpy&gt;=1.6.5 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipykernel-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (1.8.2)
-Requirement already satisfied: nest-asyncio in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipykernel-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (1.6.0)
-Requirement already satisfied: psutil in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from ipykernel-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (6.0.0)
-Requirement already satisfied: beautifulsoup4 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (4.12.3)
-Requirement already satisfied: defusedxml in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.7.1)
-Requirement already satisfied: jupyterlab-pygments in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.3.0)
-Requirement already satisfied: mistune&lt;4,&gt;=2.0.3 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (3.0.2)
-Requirement already satisfied: nbclient&gt;=0.5.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.10.0)
-Requirement already satisfied: pandocfilters&gt;=1.4.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (1.5.0)
-Requirement already satisfied: tinycss2 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (1.3.0)
-Requirement already satisfied: fastjsonschema&gt;=2.15 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (2.20.0)
-Requirement already satisfied: jsonschema&gt;=2.6 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (4.22.0)
-Requirement already satisfied: attrs&gt;=22.2.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from jsonschema&gt;=2.6-&gt;nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (23.2.0)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from jsonschema&gt;=2.6-&gt;nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (2023.12.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from jsonschema&gt;=2.6-&gt;nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.35.1)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from jsonschema&gt;=2.6-&gt;nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (0.18.1)
-Requirement already satisfied: soupsieve&gt;1.2 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from beautifulsoup4-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.10-&gt;ipywidgets~=7.7-&gt;ipyvtklink) (2.5)
-Downloading holoviews-1.19.1-py3-none-any.whl (5.0 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.0/5.0 MB</span> <span class=" -Color -Color-Red">2.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>a <span class=" -Color -Color-Cyan">0:00:01</span>
-?25hDownloading colorcet-3.1.0-py3-none-any.whl (260 kB)
-Installing collected packages: colorcet, holoviews
-Successfully installed colorcet-3.1.0 holoviews-1.19.1
-
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.2</span> -&gt; <span class=" -Color -Color-Green">24.3.1</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+Maillage créé avec succès.
+Nombre de sommets : 254
+Nombre d&#39;éléments : 614
 </pre></div>
 </div>
 </div>
@@ -615,7 +541,7 @@ Successfully installed colorcet-3.1.0 holoviews-1.19.1
 <span class="n">p</span><span class="o">.</span><span class="n">view_yz</span><span class="p">()</span>
 
 <span class="c1"># Afficher avec jupyter_backend=&#39;panel&#39;</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">jupyter_backend</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">jupyter_backend</span><span class="o">=</span><span class="s1">&#39;panel&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1119,12 +1045,12 @@ if (window.Jupyter !== undefined) {
   } catch(err) {
   }
 }
-</script><div class="output text_html"><div id='0501abc3-9e15-4752-be3e-ff99b5681e67'>
-  <div id="a146d04f-7e08-4fa9-a6e3-490f3630a11c" data-root-id="0501abc3-9e15-4752-be3e-ff99b5681e67" style="display: contents;"></div>
+</script><div class="output text_html"><div id='1e5ec8ed-6f40-4791-b56a-8540e6df5f5a'>
+  <div id="bce1798e-0633-4d5b-908d-59d59b02a7ba" data-root-id="1e5ec8ed-6f40-4791-b56a-8540e6df5f5a" style="display: contents;"></div>
 </div>
 <script type="application/javascript">(function(root) {
-  var docs_json = {"e1cd9689-85ec-4d10-97bf-d9fabda4138d":{"version":"3.6.0","title":"Bokeh Application","roots":[{"type":"object","name":"panel.models.browser.BrowserInfo","id":"0501abc3-9e15-4752-be3e-ff99b5681e67"},{"type":"object","name":"panel.models.comm_manager.CommManager","id":"e1223bd1-015d-417a-9c20-f0d876edfb61","attributes":{"plot_id":"0501abc3-9e15-4752-be3e-ff99b5681e67","comm_id":"444cbcb22dcb46ccb64ea5d7c8d8726d","client_comm_id":"34181520e5784d28981fe9f0acfe2001"}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"gap","kind":"Any","default":""},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"TemplateEditor1","properties":[{"name":"layout","kind":"Any","default":[]}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"ReactiveESM1"},{"type":"model","name":"JSComponent1"},{"type":"model","name":"ReactComponent1"},{"type":"model","name":"AnyWidgetComponent1"},{"type":"model","name":"request_value1","properties":[{"name":"fill","kind":"Any","default":"none"},{"name":"_synced","kind":"Any","default":null},{"name":"_request_sync","kind":"Any","default":0}]}]}};
-  var render_items = [{"docid":"e1cd9689-85ec-4d10-97bf-d9fabda4138d","roots":{"0501abc3-9e15-4752-be3e-ff99b5681e67":"a146d04f-7e08-4fa9-a6e3-490f3630a11c"},"root_ids":["0501abc3-9e15-4752-be3e-ff99b5681e67"]}];
+  var docs_json = {"2a7efcd9-7bf9-428d-a24c-9a1248b7baf4":{"version":"3.6.0","title":"Bokeh Application","roots":[{"type":"object","name":"panel.models.browser.BrowserInfo","id":"1e5ec8ed-6f40-4791-b56a-8540e6df5f5a"},{"type":"object","name":"panel.models.comm_manager.CommManager","id":"89d5da35-4835-48ab-8da5-6eb9bb81cf0b","attributes":{"plot_id":"1e5ec8ed-6f40-4791-b56a-8540e6df5f5a","comm_id":"83076c4afb04445c9396fc8d3eb714b2","client_comm_id":"64464743b825460584ecae44a0cdbf9f"}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"gap","kind":"Any","default":""},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"TemplateEditor1","properties":[{"name":"layout","kind":"Any","default":[]}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"ReactiveESM1"},{"type":"model","name":"JSComponent1"},{"type":"model","name":"ReactComponent1"},{"type":"model","name":"AnyWidgetComponent1"},{"type":"model","name":"request_value1","properties":[{"name":"fill","kind":"Any","default":"none"},{"name":"_synced","kind":"Any","default":null},{"name":"_request_sync","kind":"Any","default":0}]}]}};
+  var render_items = [{"docid":"2a7efcd9-7bf9-428d-a24c-9a1248b7baf4","roots":{"1e5ec8ed-6f40-4791-b56a-8540e6df5f5a":"bce1798e-0633-4d5b-908d-59d59b02a7ba"},"root_ids":["1e5ec8ed-6f40-4791-b56a-8540e6df5f5a"]}];
   var docs = Object.values(docs_json)
   if (!docs) {
     return
@@ -1223,7 +1149,7 @@ if (window.Jupyter !== undefined) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "52f1683cea8c42259a2778add7a4c59a", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "92b40438efa04f5a904a3adae389e9b0", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1378,8 +1304,6 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0f8522e3a41641a5b602287e52ead8f8", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1454,8 +1378,6 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "e954a27f100e457fb4601b5abde92bb1", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1492,8 +1414,6 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "4a10666dd17140c7b8dfa9d08ef65026", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1518,8 +1438,6 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "cb4623ba79da4a8595796a0d601067cd", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1632,8 +1550,6 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "510057ba194c4fb0b052e18044aea844", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1724,8 +1640,6 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "94a9258655134890911abae638c83829", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1832,8 +1746,6 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "50ce6909cc494add97afa8b2a3c05834", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1872,8 +1784,6 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "8c349827934d4c1791fa805607a496f2", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1949,8 +1859,6 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "7b2712134d71414aace9491dc17a9682", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 
@@ -1984,24 +1892,6 @@ if (window.Jupyter !== undefined) {
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Salam to your Jupyter Book</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="projet2.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Projet 2</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
