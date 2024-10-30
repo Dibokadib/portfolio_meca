@@ -1,0 +1,98 @@
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/opt/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pyvista as pv
+import dolfinx
+from dolfinx import mesh, fem, plot, io, default_scalar_type
+from dolfinx.fem.petsc import LinearProblem
+from mpi4py import MPI
+import ufl
+import numpy as np
+import gmsh
+import meshio
+from dolfinx.io import XDMFFile
+
+import dolfinx.fem as fem
+import dolfinx.mesh as mesh
+from petsc4py import PETSc
+
+# Initialisation de GMSH
+gmsh.initialize()
+gmsh.model.add("cylindre")
+
+lc = 0.1    # Longueur caractéristique des éléments en mètres
+
+# Créer un cylindre
+#gmsh.model.occ.addCylinder(0, 0, 0, 0, 0, height, radius)
+
+#gmsh.model.occ.addCylinder(0, 0, 0, 0, 0, height, radius)
+# Exemple avec les dimensions spécifiques
+a = 0  # Coordonnée x du coin inférieur gauche
+b = 0  # Coordonnée y du coin inférieur gauche
+L = 1 # Longueur dans la direction z
+width = 0.2  # Largeur dans la direction x
+height = 0.2  # Hauteur dans la direction y
+
+gmsh.model.occ.addBox(a, b, 0, width, height, L)
+
+# Synchronisation de la géométrie
+gmsh.model.occ.synchronize()
+
+# Définir les tailles des éléments
+gmsh.option.setNumber("Mesh.CharacteristicLengthMin", lc)
+gmsh.option.setNumber("Mesh.CharacteristicLengthMax", lc)
+
+# Générer le maillage
+gmsh.model.mesh.generate(3)  # 3 pour le maillage en 3D
+
+# Sauvegarder le maillage dans un fichier .msh
+gmsh.write("cylindre.msh")
+
+# Finaliser GMSH
+gmsh.finalize()
+
+# Lire le fichier .msh avec meshio
+msh = meshio.read("cylindre.msh")
+
+# Sauvegarder le maillage en format XDMF
+meshio.write("cylindre.xdmf", meshio.Mesh(points=msh.points, cells={"tetra": msh.cells_dict.get("tetra", [])}))
+
+# Lire le fichier .xdmf avec Dolfinx
+with XDMFFile(MPI.COMM_WORLD, "cylindre.xdmf", "r") as xdmf_file:
+    domain = xdmf_file.read_mesh(name="Grid")
+    domain.topology.create_connectivity(domain.topology.dim-1, domain.topology.dim)
+
+# Afficher des informations sur le maillage
+print("Maillage créé avec succès.")
+print(f"Nombre de sommets : {domain.topology.index_map(domain.topology.dim).size_global}")
+print(f"Nombre d'éléments : {domain.topology.index_map(domain.topology.dim-1).size_global}")
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 2[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpyvista[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpv[39;00m
+[0;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mdolfinx[39;00m
+[1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdolfinx[39;00m [38;5;28;01mimport[39;00m mesh, fem, plot, io, default_scalar_type
+[1;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdolfinx[39;00m[38;5;21;01m.[39;00m[38;5;21;01mfem[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpetsc[39;00m [38;5;28;01mimport[39;00m LinearProblem
+
+[0;31mModuleNotFoundError[0m: No module named 'dolfinx'
+
