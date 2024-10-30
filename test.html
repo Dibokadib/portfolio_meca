@@ -223,6 +223,37 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -411,11 +442,11 @@ coordinates like so:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.66522931, 0.11104956, 0.52431771],
-       [0.52774171, 0.22610935, 0.74586791],
-       [0.62913311, 0.97232158, 0.69827601],
-       [0.91926435, 0.48031197, 0.48688392],
-       [0.53825718, 0.93058544, 0.24673435]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.10249609, 0.58038338, 0.03750285],
+       [0.86492093, 0.37821136, 0.50430991],
+       [0.77276329, 0.97303505, 0.85176381],
+       [0.84875781, 0.53796428, 0.74901487],
+       [0.14913458, 0.76761581, 0.41164324]])
 </pre></div>
 </div>
 </div>
@@ -435,9 +466,9 @@ coordinates like so:</p>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
 <tr><td>N Strips</td><td>0</td></tr>
-<tr><td>X Bounds</td><td>3.831e-03, 9.998e-01</td></tr>
-<tr><td>Y Bounds</td><td>8.714e-03, 9.999e-01</td></tr>
-<tr><td>Z Bounds</td><td>6.576e-03, 9.995e-01</td></tr>
+<tr><td>X Bounds</td><td>8.646e-03, 9.961e-01</td></tr>
+<tr><td>Y Bounds</td><td>2.916e-03, 9.975e-01</td></tr>
+<tr><td>Z Bounds</td><td>3.995e-03, 9.888e-01</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -450,8 +481,42 @@ coordinates like so:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "3add603d09864499b90dfc2c74922683", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> JS Error =&gt; error: TypeError: can&#39;t convert BigInt to number
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "886abe56767e4d98843c8ec7214cb05f", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> JS Error =&gt; error: TypeError: can&#39;t convert BigInt to number
  JS Error =&gt; error: TypeError: can&#39;t convert BigInt to number
+ JS Error =&gt; error: TypeError: can&#39;t convert BigInt to number
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
+
+<span class="c1"># Créez votre mesh PyVista</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_uniform</span><span class="p">()</span>
+
+<span class="c1"># Convertissez en Plotly</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Mesh3d</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+                                <span class="n">y</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+                                <span class="n">z</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span>
+                                <span class="n">i</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">faces</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+                                <span class="n">j</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">faces</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span>
+                                <span class="n">k</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">faces</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">],</span>
+                                <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightpink&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.50</span><span class="p">)])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Créez votre mesh PyVista</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;plotly&#39;
 </pre></div>
 </div>
 </div>
@@ -472,7 +537,7 @@ connectivity between points such as this gridded mesh:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "fe7d016b7403457f93d1ddd1a860cc97", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f3e86a3c2daf4cee86051d6ecc44b367", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -487,7 +552,7 @@ connectivity between points such as this gridded mesh:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "8230281898c64035acace073cac6ac37", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "8b1328b5acf24c519c515ea5979808e3", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="what-is-a-cell">
@@ -514,7 +579,7 @@ between eight points in that mesh:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6c417436ef934e7faa9d8037ce74a639", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "86184d2b0b914832ba9d2cf04ecdce02", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <p>Cells aren’t limited to voxels, they could be a triangle between three
 points, a line between two points, or even a single point could be its
@@ -544,7 +609,7 @@ across the cells.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a86691537eb24a29abf610b7c91ed2aa", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "7b6655e2e444411fb5937ef4551a5f18", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="cell-data">
@@ -560,7 +625,7 @@ volume) is assigned the value of that attribute.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6b8972d540ba486ea45372eddf1775ff", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b06713b222bc4c009388329b5ff813da", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <p>Here’s a comparison of point data versus cell data and how point data
 is interpolated across cells when mapping colors. This is unlike cell
@@ -578,11 +643,23 @@ data which has a single value across the cell’s domain:</p>
 <span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">uni</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;Spatial Cell Data&quot;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
+
+<span class="n">uni</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_uniform</span><span class="p">()</span>
+
+<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">border</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">uni</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;Spatial Point Data&quot;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">uni</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;Spatial Cell Data&quot;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d4369192a8e2412d9b8c05f2d5dfebf3", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5fc23543b2ba48499792f01e88c0d647", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="field-data">
@@ -616,22 +693,22 @@ generate cube containing 6 faces and assign each face an integer from
 <p>Note how this varies from assigning scalars to each point</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cube</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Cube</span><span class="p">()</span>
-<span class="n">cube</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;myscalars&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 
-<span class="n">other_cube</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">other_cube</span><span class="o">.</span><span class="n">point_data</span><span class="p">[</span><span class="s2">&quot;myscalars&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">uni</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_uniform</span><span class="p">()</span>
 
-<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">)</span>
+<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">border</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">uni</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;Spatial Point Data&quot;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">other_cube</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">uni</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;Spatial Cell Data&quot;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "3464196b766342a9b9e57b26fde16996", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a86a8264c9d541eeb1fc86182d947eff", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 
@@ -639,7 +716,7 @@ generate cube containing 6 faces and assign each face an integer from
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
