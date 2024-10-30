@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'projet1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="projet2.html" />
+    <link rel="next" title="Projet 2" href="projet2.html" />
     <link rel="prev" title="Salam to your Jupyter Book" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -170,6 +170,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Projet 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projet2.html">Projet 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
 </ul>
 
     </div>
@@ -441,6 +443,135 @@
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">dolfinx.fem.petsc</span> <span class="kn">import</span> <span class="n">LinearProblem</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;dolfinx&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>panel<span class="w"> </span>pyvista<span class="w"> </span>pyvista-panel
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: panel in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (1.5.3)
+Requirement already satisfied: pyvista in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (0.43.10)
+<span class=" -Color -Color-Red">ERROR: Could not find a version that satisfies the requirement pyvista-panel (from versions: none)</span>
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.2</span> -&gt; <span class=" -Color -Color-Green">24.3.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+<span class=" -Color -Color-Red">ERROR: No matching distribution found for pyvista-panel</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>panel
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting panel
+  Using cached panel-1.5.3-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: bleach in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (6.1.0)
+Collecting bokeh&lt;3.7.0,&gt;=3.5.0 (from panel)
+  Downloading bokeh-3.6.0-py3-none-any.whl.metadata (12 kB)
+Collecting linkify-it-py (from panel)
+  Downloading linkify_it_py-2.0.3-py3-none-any.whl.metadata (8.5 kB)
+Collecting markdown (from panel)
+  Downloading Markdown-3.7-py3-none-any.whl.metadata (7.0 kB)
+Requirement already satisfied: markdown-it-py in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (3.0.0)
+Collecting mdit-py-plugins (from panel)
+  Using cached mdit_py_plugins-0.4.2-py3-none-any.whl.metadata (2.8 kB)
+Requirement already satisfied: packaging in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (24.1)
+Requirement already satisfied: pandas&gt;=1.2 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (2.2.2)
+Collecting param&lt;3.0,&gt;=2.1.0 (from panel)
+  Downloading param-2.1.1-py3-none-any.whl.metadata (7.2 kB)
+Collecting pyviz-comms&gt;=2.0.0 (from panel)
+  Downloading pyviz_comms-3.0.3-py3-none-any.whl.metadata (7.7 kB)
+Requirement already satisfied: requests in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (2.32.3)
+Requirement already satisfied: tqdm in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (4.66.4)
+Requirement already satisfied: typing-extensions in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from panel) (4.12.2)
+Requirement already satisfied: Jinja2&gt;=2.9 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (3.1.4)
+Requirement already satisfied: contourpy&gt;=1.2 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (1.2.1)
+Requirement already satisfied: numpy&gt;=1.16 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (1.26.4)
+Requirement already satisfied: pillow&gt;=7.1.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (10.3.0)
+Requirement already satisfied: PyYAML&gt;=3.10 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (6.0.1)
+Requirement already satisfied: tornado&gt;=6.2 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (6.4.1)
+Collecting xyzservices&gt;=2021.09.1 (from bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel)
+  Downloading xyzservices-2024.9.0-py3-none-any.whl.metadata (4.1 kB)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;panel) (2.9.0)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;panel) (2024.1)
+Requirement already satisfied: tzdata&gt;=2022.7 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;panel) (2024.1)
+Requirement already satisfied: six&gt;=1.9.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bleach-&gt;panel) (1.16.0)
+Requirement already satisfied: webencodings in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from bleach-&gt;panel) (0.5.1)
+Collecting uc-micro-py (from linkify-it-py-&gt;panel)
+  Downloading uc_micro_py-1.0.3-py3-none-any.whl.metadata (2.0 kB)
+Requirement already satisfied: mdurl~=0.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from markdown-it-py-&gt;panel) (0.1.2)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from requests-&gt;panel) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from requests-&gt;panel) (3.7)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from requests-&gt;panel) (2.2.2)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from requests-&gt;panel) (2024.7.4)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/anaconda3/envs/fenicsx-env/lib/python3.12/site-packages (from Jinja2&gt;=2.9-&gt;bokeh&lt;3.7.0,&gt;=3.5.0-&gt;panel) (2.1.5)
+Downloading panel-1.5.3-py3-none-any.whl (27.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">27.4/27.4 MB</span> <span class=" -Color -Color-Red">6.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>00:0100:01
+?25hDownloading bokeh-3.6.0-py3-none-any.whl (6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.9/6.9 MB</span> <span class=" -Color -Color-Red">8.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>00:0100:01
+?25hDownloading param-2.1.1-py3-none-any.whl (116 kB)
+Downloading pyviz_comms-3.0.3-py3-none-any.whl (83 kB)
+Downloading linkify_it_py-2.0.3-py3-none-any.whl (19 kB)
+Downloading Markdown-3.7-py3-none-any.whl (106 kB)
+Using cached mdit_py_plugins-0.4.2-py3-none-any.whl (55 kB)
+Downloading xyzservices-2024.9.0-py3-none-any.whl (85 kB)
+Downloading uc_micro_py-1.0.3-py3-none-any.whl (6.2 kB)
+Installing collected packages: xyzservices, uc-micro-py, param, markdown, pyviz-comms, mdit-py-plugins, linkify-it-py, bokeh, panel
+Successfully installed bokeh-3.6.0 linkify-it-py-2.0.3 markdown-3.7 mdit-py-plugins-0.4.2 panel-1.5.3 param-2.1.1 pyviz-comms-3.0.3 uc-micro-py-1.0.3 xyzservices-2024.9.0
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.2</span> -&gt; <span class=" -Color -Color-Green">24.3.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+
+<span class="c1"># Préparer les données (remplace par tes données)</span>
+<span class="n">u_topology</span><span class="p">,</span> <span class="n">u_cell_types</span><span class="p">,</span> <span class="n">u_geometry</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">vtk_mesh</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+<span class="n">u_grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">UnstructuredGrid</span><span class="p">(</span><span class="n">u_topology</span><span class="p">,</span> <span class="n">u_cell_types</span><span class="p">,</span> <span class="n">u_geometry</span><span class="p">)</span>
+
+<span class="c1"># Configurer le Plotter PyVista</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;u&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title_font_size&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s2">&quot;label_font_size&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="s2">&quot;shadow&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;arial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;vertical&quot;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">})</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Poutre&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;upper_edge&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show_bounds</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">view_yz</span><span class="p">()</span>
+
+<span class="c1"># Afficher le Plotter dans Jupyter Book avec Panel</span>
+<span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">jupyter_backend</span><span class="o">=</span><span class="s1">&#39;panel&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">servable</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a628878ebb991ffc54deee67b2904c158511f7b240796f66a84e53fdab20dc4c.png" src="_images/a628878ebb991ffc54deee67b2904c158511f7b240796f66a84e53fdab20dc4c.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:param.Str00120: Displaying Panel objects in the notebook requires the panel extension to be loaded. Ensure you run pn.extension() before displaying objects in the notebook.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Str(None)
 </pre></div>
 </div>
 </div>
@@ -1252,7 +1383,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Projet 2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
