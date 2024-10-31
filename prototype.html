@@ -1,0 +1,1611 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cylindre &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'prototype';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Untittled" href="Untitled.html" />
+    <link rel="prev" title="Salam to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Salam to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cylindre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Untitled.html">Untittled</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fprototype.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/prototype.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Cylindre</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="cylindre">
+<h1>Cylindre<a class="headerlink" href="#cylindre" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">dolfinx</span>
+<span class="kn">from</span> <span class="nn">dolfinx</span> <span class="kn">import</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">fem</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">io</span><span class="p">,</span> <span class="n">default_scalar_type</span>
+<span class="kn">from</span> <span class="nn">dolfinx.fem.petsc</span> <span class="kn">import</span> <span class="n">LinearProblem</span>
+<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">import</span> <span class="nn">ufl</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">gmsh</span>
+<span class="kn">import</span> <span class="nn">meshio</span>
+<span class="kn">from</span> <span class="nn">dolfinx.io</span> <span class="kn">import</span> <span class="n">XDMFFile</span>
+
+<span class="kn">import</span> <span class="nn">dolfinx.fem</span> <span class="k">as</span> <span class="nn">fem</span>
+<span class="kn">import</span> <span class="nn">dolfinx.mesh</span> <span class="k">as</span> <span class="nn">mesh</span>
+<span class="kn">from</span> <span class="nn">petsc4py</span> <span class="kn">import</span> <span class="n">PETSc</span>
+
+<span class="c1"># Initialisation de GMSH</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;ellipse&quot;</span><span class="p">)</span>
+
+<span class="c1"># Définition des variables</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1"># Demi-grand axe en mètres</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1"># Demi-petit axe en mètres</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># Hauteur du cylindre en mètres</span>
+<span class="n">lc</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># Longueur caractéristique des éléments en mètres</span>
+
+<span class="c1"># Créer une ellipse dans le plan XY au centre (0, 0, 0)</span>
+<span class="n">ellipse</span> <span class="o">=</span> <span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">addEllipse</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># Créer une boucle fermée autour de l&#39;ellipse</span>
+<span class="n">curve_loop</span> <span class="o">=</span> <span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">addCurveLoop</span><span class="p">([</span><span class="n">ellipse</span><span class="p">])</span>
+
+<span class="c1"># Créer une surface à partir de la boucle</span>
+<span class="n">surface</span> <span class="o">=</span> <span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">addPlaneSurface</span><span class="p">([</span><span class="n">curve_loop</span><span class="p">])</span>
+
+<span class="c1"># Extruder cette surface pour créer un cylindre elliptique de hauteur h</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">extrude</span><span class="p">([(</span><span class="mi">2</span><span class="p">,</span> <span class="n">surface</span><span class="p">)],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># Synchronisation de la géométrie</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">synchronize</span><span class="p">()</span>
+
+<span class="c1"># Définir les tailles des éléments</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">setNumber</span><span class="p">(</span><span class="s2">&quot;Mesh.CharacteristicLengthMin&quot;</span><span class="p">,</span> <span class="n">lc</span><span class="p">)</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">setNumber</span><span class="p">(</span><span class="s2">&quot;Mesh.CharacteristicLengthMax&quot;</span><span class="p">,</span> <span class="n">lc</span><span class="p">)</span>
+
+<span class="c1"># Générer le maillage</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 3 pour le maillage en 3D</span>
+
+<span class="c1"># Sauvegarder le maillage dans un fichier .msh</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;ellipse.msh&quot;</span><span class="p">)</span>
+
+<span class="c1"># Finaliser GMSH</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="c1"># Lire le fichier .msh avec meshio</span>
+<span class="n">msh</span> <span class="o">=</span> <span class="n">meshio</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;ellipse.msh&quot;</span><span class="p">)</span>
+
+<span class="c1"># Sauvegarder le maillage en format XDMF</span>
+<span class="n">meshio</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;ellipse.xdmf&quot;</span><span class="p">,</span> <span class="n">meshio</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">msh</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">cells</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;tetra&quot;</span><span class="p">:</span> <span class="n">msh</span><span class="o">.</span><span class="n">cells_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tetra&quot;</span><span class="p">,</span> <span class="p">[])}))</span>
+
+<span class="c1"># Lire le fichier .xdmf avec Dolfinx</span>
+<span class="k">with</span> <span class="n">XDMFFile</span><span class="p">(</span><span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span><span class="p">,</span> <span class="s2">&quot;ellipse.xdmf&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">xdmf_file</span><span class="p">:</span>
+    <span class="n">domain</span> <span class="o">=</span> <span class="n">xdmf_file</span><span class="o">.</span><span class="n">read_mesh</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Grid&quot;</span><span class="p">)</span>
+    <span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">create_connectivity</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+
+<span class="c1"># Afficher des informations sur le maillage</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maillage créé avec succès.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nombre de sommets : </span><span class="si">{</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">index_map</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">size_global</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nombre d&#39;éléments : </span><span class="si">{</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">index_map</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">size_global</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Info    : Meshing 1D...
+Info    : [  0%] Meshing curve 1 (Ellipse)
+Info    : [ 40%] Meshing curve 2 (Line)
+Info    : [ 70%] Meshing curve 3 (Ellipse)
+Info    : Done meshing 1D (Wall 0.000237999s, CPU 0.000317s)
+Info    : Meshing 2D...
+Info    : [  0%] Meshing surface 1 (Plane, Frontal-Delaunay)
+Info    : [ 40%] Meshing surface 2 (Unknown, Frontal-Delaunay)
+Info    : [ 70%] Meshing surface 3 (Plane, Frontal-Delaunay)
+Info    : Done meshing 2D (Wall 0.19491s, CPU 0.193173s)
+Info    : Meshing 3D...
+Info    : 3D Meshing 1 volume with 1 connected component
+Info    : Tetrahedrizing 4451 nodes...
+Info    : Done tetrahedrizing 4459 nodes (Wall 0.0351201s, CPU 0.034297s)
+Info    : Reconstructing mesh...
+Info    :  - Creating surface mesh
+Info    :  - Identifying boundary edges
+Info    :  - Recovering boundary
+Info    : Done reconstructing mesh (Wall 0.168512s, CPU 0.165074s)
+Info    : Found volume 1
+Info    : It. 0 - 0 nodes created - worst tet radius 10.6389 (nodes removed 0 0)
+Info    : It. 500 - 500 nodes created - worst tet radius 2.41203 (nodes removed 0 0)
+Info    : It. 1000 - 1000 nodes created - worst tet radius 1.99078 (nodes removed 0 0)
+Info    : It. 1500 - 1500 nodes created - worst tet radius 1.7586 (nodes removed 0 0)
+Info    : It. 2000 - 2000 nodes created - worst tet radius 1.61403 (nodes removed 0 0)
+Info    : It. 2500 - 2500 nodes created - worst tet radius 1.50464 (nodes removed 0 0)
+Info    : It. 3000 - 3000 nodes created - worst tet radius 1.42427 (nodes removed 0 0)
+Info    : It. 3500 - 3500 nodes created - worst tet radius 1.35923 (nodes removed 0 0)
+Info    : It. 4000 - 4000 nodes created - worst tet radius 1.30401 (nodes removed 0 0)
+Info    : It. 4500 - 4500 nodes created - worst tet radius 1.25867 (nodes removed 0 0)
+Info    : It. 5000 - 5000 nodes created - worst tet radius 1.21836 (nodes removed 0 0)
+Info    : It. 5500 - 5500 nodes created - worst tet radius 1.18389 (nodes removed 0 0)
+Info    : It. 6000 - 6000 nodes created - worst tet radius 1.15277 (nodes removed 0 0)
+Info    : It. 6500 - 6500 nodes created - worst tet radius 1.1238 (nodes removed 0 0)
+Info    : It. 7000 - 7000 nodes created - worst tet radius 1.09731 (nodes removed 0 0)
+Info    : It. 7500 - 7500 nodes created - worst tet radius 1.07278 (nodes removed 0 0)
+Info    : It. 8000 - 8000 nodes created - worst tet radius 1.05221 (nodes removed 0 0)
+Info    : It. 8500 - 8500 nodes created - worst tet radius 1.03248 (nodes removed 0 0)
+Info    : It. 9000 - 9000 nodes created - worst tet radius 1.01447 (nodes removed 0 0)
+Info    : 3D refinement terminated (13870 nodes total):
+Info    :  - 0 Delaunay cavities modified for star shapeness
+Info    :  - 0 nodes could not be inserted
+Info    :  - 73654 tetrahedra created in 0.266918 sec. (275942 tets/s)
+Info    : 0 node relocations
+Info    : Done meshing 3D (Wall 0.6837s, CPU 0.674971s)
+Info    : Optimizing mesh...
+Info    : Optimizing volume 1
+Info    : Optimization starts (volume = 0.125509) with worst = 0.0113981 / average = 0.782282:
+Info    : 0.00 &lt; quality &lt; 0.10 :       134 elements
+Info    : 0.10 &lt; quality &lt; 0.20 :       485 elements
+Info    : 0.20 &lt; quality &lt; 0.30 :       817 elements
+Info    : 0.30 &lt; quality &lt; 0.40 :      1291 elements
+Info    : 0.40 &lt; quality &lt; 0.50 :      1968 elements
+Info    : 0.50 &lt; quality &lt; 0.60 :      3169 elements
+Info    : 0.60 &lt; quality &lt; 0.70 :      6939 elements
+Info    : 0.70 &lt; quality &lt; 0.80 :     16760 elements
+Info    : 0.80 &lt; quality &lt; 0.90 :     28032 elements
+Info    : 0.90 &lt; quality &lt; 1.00 :     14059 elements
+Info    : 1429 edge swaps, 43 node relocations (volume = 0.125509): worst = 0.17436 / average = 0.794378 (Wall 0.0129575s, CPU 0.01291s)
+Info    : 1438 edge swaps, 43 node relocations (volume = 0.125509): worst = 0.294127 / average = 0.794458 (Wall 0.0147615s, CPU 0.014718s)
+Info    : No ill-shaped tets in the mesh :-)
+Info    : 0.00 &lt; quality &lt; 0.10 :         0 elements
+Info    : 0.10 &lt; quality &lt; 0.20 :         0 elements
+Info    : 0.20 &lt; quality &lt; 0.30 :         1 elements
+Info    : 0.30 &lt; quality &lt; 0.40 :      1273 elements
+Info    : 0.40 &lt; quality &lt; 0.50 :      1897 elements
+Info    : 0.50 &lt; quality &lt; 0.60 :      3085 elements
+Info    : 0.60 &lt; quality &lt; 0.70 :      6920 elements
+Info    : 0.70 &lt; quality &lt; 0.80 :     16934 elements
+Info    : 0.80 &lt; quality &lt; 0.90 :     28282 elements
+Info    : 0.90 &lt; quality &lt; 1.00 :     13984 elements
+Info    : Done optimizing mesh (Wall 0.0513222s, CPU 0.049643s)
+Info    : 13870 nodes 81452 elements
+Info    : Writing &#39;ellipse.msh&#39;...
+Info    : Done writing &#39;ellipse.msh&#39;
+
+Maillage créé avec succès.
+Nombre de sommets : 72376
+Nombre d&#39;éléments : 149201
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du maillage pour PyVista basé sur les coordonnées des dofs</span>
+<span class="n">u_topology</span><span class="p">,</span> <span class="n">u_cell_types</span><span class="p">,</span> <span class="n">u_geometry</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">vtk_mesh</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+
+<span class="c1"># Créez la grille PyVista et ajoutez les valeurs des dofs à la grille</span>
+<span class="n">u_grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">UnstructuredGrid</span><span class="p">(</span><span class="n">u_topology</span><span class="p">,</span> <span class="n">u_cell_types</span><span class="p">,</span> <span class="n">u_geometry</span><span class="p">)</span>
+
+<span class="c1"># Visualisation</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+
+<span class="c1">#u_grid.point_data[&quot;u&quot;] = uh.x.array.reshape((u_geometry.shape[0], 2))</span>
+<span class="c1">#warped = u_grid.warp_by_scalar(&quot;u&quot;, factor=10)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;u&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title_font_size&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s2">&quot;label_font_size&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="s2">&quot;shadow&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;arial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;vertical&quot;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">})</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Cylindre Mesh&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;upper_edge&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show_bounds</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">view_yz</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a90c49a15d164ed096c591a9fdb0d7ae", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">V</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">functionspace</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Lagrange&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span> <span class="p">)))</span>
+
+<span class="k">def</span> <span class="nf">down_face</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span> 
+
+<span class="k">def</span> <span class="nf">top_face</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">h</span><span class="p">)</span>  
+    
+<span class="k">def</span> <span class="nf">lateral_face</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">tolerance</span> <span class="o">=</span> <span class="mf">1e-5</span>  <span class="c1"># Tolérance pour la comparaison</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="n">tolerance</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">h</span><span class="p">)</span>
+    
+<span class="n">fdim</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">Sigma_l</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">locate_entities</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">fdim</span><span class="p">,</span> <span class="n">lateral_face</span><span class="p">)</span>
+<span class="n">Sigma_0</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">locate_entities</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">fdim</span><span class="p">,</span> <span class="n">down_face</span><span class="p">)</span>
+<span class="n">Sigma_h</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">locate_entities</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">fdim</span><span class="p">,</span> <span class="n">top_face</span><span class="p">)</span>
+
+<span class="n">u_D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">default_scalar_type</span><span class="p">)</span>
+
+<span class="n">bc1</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">dirichletbc</span><span class="p">(</span><span class="n">u_D</span><span class="p">,</span> <span class="n">fem</span><span class="o">.</span><span class="n">locate_dofs_topological</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">fdim</span><span class="p">,</span> <span class="n">Sigma_0</span><span class="p">),</span> <span class="n">V</span><span class="p">)</span>
+<span class="n">bc2</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">dirichletbc</span><span class="p">(</span><span class="n">u_D</span><span class="p">,</span> <span class="n">fem</span><span class="o">.</span><span class="n">locate_dofs_topological</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">fdim</span><span class="p">,</span> <span class="n">Sigma_h</span><span class="p">),</span> <span class="n">V</span><span class="p">)</span>
+<span class="n">bc3</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">dirichletbc</span><span class="p">(</span><span class="n">u_D</span><span class="p">,</span> <span class="n">fem</span><span class="o">.</span><span class="n">locate_dofs_topological</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">fdim</span><span class="p">,</span> <span class="n">Sigma_l</span><span class="p">),</span> <span class="n">V</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Définir une fonction pour appliquer des marqueurs</span>
+<span class="k">def</span> <span class="nf">apply_marker</span><span class="p">(</span><span class="n">boundary_facets</span><span class="p">,</span> <span class="n">marker_array</span><span class="p">,</span> <span class="n">marker_value</span><span class="p">):</span>
+    <span class="n">boundary_facets</span> <span class="o">=</span> <span class="n">boundary_facets</span><span class="p">[</span><span class="n">boundary_facets</span> <span class="o">&lt;</span> <span class="n">num_cells_local</span><span class="p">]</span>
+    <span class="n">marker_array</span><span class="p">[</span><span class="n">boundary_facets</span><span class="p">]</span> <span class="o">=</span> <span class="n">marker_value</span>
+
+<span class="c1"># Obtenir le nombre de cellules locales</span>
+<span class="n">num_cells_local</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">index_map</span><span class="p">(</span><span class="n">fdim</span><span class="p">)</span><span class="o">.</span><span class="n">size_local</span>
+
+<span class="c1"># Initialiser les tableaux de marqueurs</span>
+<span class="n">markers</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_cells_local</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+
+<span class="c1"># Appliquer les marqueurs</span>
+<span class="n">apply_marker</span><span class="p">(</span><span class="n">Sigma_0</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Marqueur 1</span>
+<span class="n">apply_marker</span><span class="p">(</span><span class="n">Sigma_h</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Marqueur 2</span>
+<span class="n">apply_marker</span><span class="p">(</span><span class="n">Sigma_l</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Marqueur 3</span>
+
+<span class="c1"># Calculer le marqueur combiné</span>
+<span class="n">markers</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">markers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">markers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">markers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Ajouter un marqueur spécifique pour les cellules restantes (si nécessaire)</span>
+<span class="n">markers</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="n">markers</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="c1"># Créer la connectivité du domaine</span>
+<span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">create_connectivity</span><span class="p">(</span><span class="n">fdim</span><span class="p">,</span> <span class="n">fdim</span><span class="p">)</span>
+
+<span class="c1"># Obtenir les données de maillage pour PyVista</span>
+<span class="n">topology</span><span class="p">,</span> <span class="n">cell_types</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">dolfinx</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">vtk_mesh</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">fdim</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_cells_local</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Création du maillage PyVista</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">UnstructuredGrid</span><span class="p">(</span><span class="n">topology</span><span class="p">,</span> <span class="n">cell_types</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Fonction pour ajouter des maillages à une fenêtre</span>
+<span class="k">def</span> <span class="nf">add_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">marker</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">threshold_min</span><span class="p">):</span>
+    <span class="c1"># Mettre à jour les données de cellule du maillage</span>
+    <span class="n">grid</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Marker&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">marker</span>
+    <span class="n">grid</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Marker&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Ajouter le maillage avec les marqueurs</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Boundary Marker&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;title_font_size&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+        <span class="s2">&quot;label_font_size&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+        <span class="s2">&quot;shadow&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;arial&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;vertical&quot;</span><span class="p">:</span> <span class="kc">False</span>
+    <span class="p">})</span>
+    
+    <span class="c1"># Appliquer un filtre basé sur le seuil</span>
+    <span class="n">grid_filter</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">threshold_min</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="s1">&#39;Marker&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">grid_filter</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Ajouter le texte et les axes</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;upper_edge&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualisation avec PyVista</span>
+<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Fenêtre 1 : Afficher toutes les cellules</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">add_plot</span><span class="p">(</span><span class="n">pl</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;All Boundaries&quot;</span><span class="p">,</span> <span class="n">threshold_min</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Fenêtre 2 : Afficher les cellules avec marker1</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">add_plot</span><span class="p">(</span><span class="n">pl</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Down Boundary&quot;</span><span class="p">,</span> <span class="n">threshold_min</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Fenêtre 3 : Afficher les cellules avec marker2</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">add_plot</span><span class="p">(</span><span class="n">pl</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Top Boundary&quot;</span><span class="p">,</span> <span class="n">threshold_min</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+
+<span class="c1"># Fenêtre 4 : Afficher les cellules avec marker3</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">add_plot</span><span class="p">(</span><span class="n">pl</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Lateral Boundary&quot;</span><span class="p">,</span> <span class="n">threshold_min</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+
+<span class="c1"># Configuration finale</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "3e88d73e283446e287b5f00dc104e8c8", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="mf">80e9</span>
+<span class="n">lambda_</span> <span class="o">=</span> <span class="mf">120e9</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>  <span class="c1"># Pi</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># Angle en radians</span>
+<span class="c1"># Calcul d&#39;alpha</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">omega</span> <span class="o">/</span> <span class="n">h</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;α = </span><span class="si">{</span><span class="n">alpha</span><span class="si">}</span><span class="s2"> m^-1&quot;</span><span class="p">)</span>
+<span class="c1"># Calcul de C</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">R</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">alpha</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;C = </span><span class="si">{</span><span class="n">C</span><span class="si">}</span><span class="s2"> kg.m^2/s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>α = 20.0 m^-1
+C = 1005309649.1487346 kg.m^2/s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">C</span> <span class="o">/</span> <span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">R</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># A un scalaire constant positif</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">SpatialCoordinate</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+<span class="c1"># Définition des composantes de torsion</span>
+<span class="n">T1</span> <span class="o">=</span> <span class="o">-</span><span class="n">A</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
+<span class="n">T2</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">T3</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">as_ufl</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>  <span class="c1"># T3 = 0, en tant que constante UFL</span>
+<span class="c1"># Combinaison en un champ vectoriel</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">as_vector</span><span class="p">([</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">T3</span><span class="p">])</span>
+
+<span class="c1">#T = fem.Constant(domain, default_scalar_type([0, 0, 10]))</span>
+
+<span class="c1"># Marqueurs des facettes</span>
+<span class="n">marked_facets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">Sigma_h</span><span class="p">])</span>
+<span class="c1">#marked_values = np.hstack([np.full_like(Sigma_0, 1), np.full_like(Sigma_h, 2)])</span>
+<span class="n">marked_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">Sigma_h</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="c1"># Tri des facettes et valeurs</span>
+<span class="n">sorted_facets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">marked_facets</span><span class="p">)</span>
+<span class="n">facet_tag</span> <span class="o">=</span> <span class="n">dolfinx</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">meshtags</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">marked_facets</span><span class="p">[</span><span class="n">sorted_facets</span><span class="p">],</span> <span class="n">marked_values</span><span class="p">[</span><span class="n">sorted_facets</span><span class="p">])</span>
+
+<span class="c1"># Définir une mesure pour les facettes marquées</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">Measure</span><span class="p">(</span><span class="s1">&#39;ds&#39;</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="n">domain</span><span class="p">,</span> <span class="n">subdomain_data</span><span class="o">=</span><span class="n">facet_tag</span><span class="p">)</span>
+
+<span class="c1">#ufl.dot(M, ufl.cross(ufl.grad(u), v)) </span>
+
+<span class="k">def</span> <span class="nf">epsilon</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ufl</span><span class="o">.</span><span class="n">sym</span><span class="p">(</span><span class="n">ufl</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>  <span class="c1"># Equivalent to 0.5*(ufl.nabla_grad(u) + ufl.nabla_grad(u).T) ou 0.5 * (ufl.grad(u).T + ufl.grad(u))</span>
+
+<span class="k">def</span> <span class="nf">sigma</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">lambda_</span> <span class="o">*</span> <span class="n">ufl</span><span class="o">.</span><span class="n">nabla_div</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="n">ufl</span><span class="o">.</span><span class="n">Identity</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">))</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">mu</span> <span class="o">*</span> <span class="n">epsilon</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">TrialFunction</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">TestFunction</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+
+<span class="c1"># Extraire les composantes du gradient et les assembler en un vecteur</span>
+<span class="n">grad_u</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="n">grad_u_vec</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">as_vector</span><span class="p">([</span><span class="n">grad_u</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grad_u</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">grad_u</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> 
+<span class="n">product_vectoriel</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">grad_u_vec</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Constant</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">default_scalar_type</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">sigma</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="n">epsilon</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="o">*</span> <span class="n">ufl</span><span class="o">.</span><span class="n">dx</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="o">*</span> <span class="n">ufl</span><span class="o">.</span><span class="n">dx</span> <span class="o">+</span> <span class="n">ufl</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="o">*</span> <span class="n">ds</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Terme de force volumique, pression et moment de torsion</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">LinearProblem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">bcs</span><span class="o">=</span><span class="p">[</span><span class="n">bc1</span><span class="p">],</span> <span class="n">petsc_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;ksp_type&quot;</span><span class="p">:</span> <span class="s2">&quot;cg&quot;</span><span class="p">,</span> <span class="s2">&quot;pc_type&quot;</span><span class="p">:</span> <span class="s2">&quot;jacobi&quot;</span><span class="p">})</span>
+<span class="c1">#problem = LinearProblem(a, L, bcs=[bc1], petsc_options={&quot;ksp_type&quot;: &quot;preonly&quot;, &quot;pc_type&quot;: &quot;lu&quot;})</span>
+<span class="n">uh</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function sigma at 0x163a56020&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du maillage pour PyVista basé sur les coordonnées des dofs</span>
+<span class="n">u_topology</span><span class="p">,</span> <span class="n">u_cell_types</span><span class="p">,</span> <span class="n">u_geometry</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">vtk_mesh</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+
+<span class="c1"># Créez la grille PyVista et ajoutez les valeurs des dofs à la grille</span>
+<span class="n">u_grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">UnstructuredGrid</span><span class="p">(</span><span class="n">u_topology</span><span class="p">,</span> <span class="n">u_cell_types</span><span class="p">,</span> <span class="n">u_geometry</span><span class="p">)</span>
+
+<span class="c1"># Convertir le vecteur de solution en format compatible pour PyVista</span>
+<span class="c1">#uh_vectors = uh.x.array.reshape((-1, domain.geometry.dim))</span>
+
+<span class="c1"># Attach vector values to grid and warp grid by vector</span>
+<span class="n">u_grid</span><span class="p">[</span><span class="s2">&quot;u&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">uh</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">u_geometry</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Visualisation</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;u&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title_font_size&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s2">&quot;label_font_size&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="s2">&quot;shadow&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;arial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;vertical&quot;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">})</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Déplacements&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;upper_edge&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "479c0008496a40d2af6245a002f89d58", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;u&quot;</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span>
+    <span class="n">show_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Normalized Displacement&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">component</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;X Displacement&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">component</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Y Displacement&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">component</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Z Displacement&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Lier les vues pour une vue cohérente</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="s1">&#39;iso&#39;</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span>
+<span class="c1"># Afficher le tout</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "ffc0b258a0e5448dae40f2b70b6e7f30", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###### Visualisation</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">warped</span> <span class="o">=</span> <span class="n">u_grid</span><span class="o">.</span><span class="n">warp_by_vector</span><span class="p">(</span><span class="s2">&quot;u&quot;</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;u&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title_font_size&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s2">&quot;label_font_size&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="s2">&quot;shadow&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;arial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;vertical&quot;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">})</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Déplacements&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;upper_edge&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "52635a785f994bfbae5a0e2f9ada428a", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">dolfinx</span>
+<span class="kn">import</span> <span class="nn">ufl</span>
+<span class="kn">from</span> <span class="nn">petsc4py</span> <span class="kn">import</span> <span class="n">PETSc</span>
+<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Calculer le tenseur de déformation</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="n">epsilon</span><span class="p">(</span><span class="n">uh</span><span class="p">)</span>
+
+<span class="c1"># Extraire les composantes du tenseur de déformation</span>
+<span class="n">eps_xx</span> <span class="o">=</span> <span class="n">eps</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">eps_xy</span> <span class="o">=</span> <span class="n">eps</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">eps_xz</span> <span class="o">=</span> <span class="n">eps</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">eps_yy</span> <span class="o">=</span> <span class="n">eps</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">eps_yz</span> <span class="o">=</span> <span class="n">eps</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">eps_zz</span> <span class="o">=</span> <span class="n">eps</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Créez la grille PyVista</span>
+<span class="n">eps_topology</span><span class="p">,</span> <span class="n">eps_cell_types</span><span class="p">,</span> <span class="n">eps_geometry</span> <span class="o">=</span> <span class="n">dolfinx</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">vtk_mesh</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+<span class="n">eps_grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">UnstructuredGrid</span><span class="p">(</span><span class="n">eps_topology</span><span class="p">,</span> <span class="n">eps_cell_types</span><span class="p">,</span> <span class="n">eps_geometry</span><span class="p">)</span>
+
+<span class="n">V_eps</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">functionspace</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;DG&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">eps_xx_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">eps_xx</span><span class="p">,</span> <span class="n">V_eps</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">strain_xx</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_eps</span><span class="p">)</span>
+<span class="n">strain_xx</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">eps_xx_expr</span><span class="p">)</span>
+
+<span class="n">eps_yy_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">eps_yy</span><span class="p">,</span> <span class="n">V_eps</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">strain_yy</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_eps</span><span class="p">)</span>
+<span class="n">strain_yy</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">eps_yy_expr</span><span class="p">)</span>
+
+<span class="n">eps_zz_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">eps_zz</span><span class="p">,</span> <span class="n">V_eps</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">strain_zz</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_eps</span><span class="p">)</span>
+<span class="n">strain_zz</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">eps_zz_expr</span><span class="p">)</span>
+
+<span class="n">eps_yz_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">eps_yz</span><span class="p">,</span> <span class="n">V_eps</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">strain_yz</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_eps</span><span class="p">)</span>
+<span class="n">strain_yz</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">eps_yz_expr</span><span class="p">)</span>
+
+<span class="n">eps_xz_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">eps_xz</span><span class="p">,</span> <span class="n">V_eps</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">strain_xz</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_eps</span><span class="p">)</span>
+<span class="n">strain_xz</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">eps_xz_expr</span><span class="p">)</span>
+
+<span class="n">eps_xy_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">eps_xy</span><span class="p">,</span> <span class="n">V_eps</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">strain_xy</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_eps</span><span class="p">)</span>
+<span class="n">strain_xy</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">eps_xy_expr</span><span class="p">)</span>
+
+<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="n">warped</span> <span class="o">=</span> <span class="n">u_grid</span><span class="o">.</span><span class="n">warp_by_vector</span><span class="p">(</span><span class="s2">&quot;u&quot;</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">dargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span>
+    <span class="n">show_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Epsilon_XX&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">strain_xx</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Epsilon_XX&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Epsilon XX&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Epsilon_YY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">strain_yy</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Epsilon_YY&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Epsilon YY&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Epsilon_ZZ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">strain_zz</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Epsilon_ZZ&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Epsilon ZZ&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Epsilon_YZ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">strain_yz</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Epsilon_YZ&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Epsilon YZ&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Epsilon_XZ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">strain_xz</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Epsilon_XZ&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Epsilon XZ&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Epsilon_XY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">strain_xy</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Epsilon_XY&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Epsilon XY&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="c1"># Lier les vues pour une vue cohérente</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="s1">&#39;iso&#39;</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span>
+<span class="c1"># Afficher le tout</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "fefeb15614fc49958cb4722b73c2462f", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">dolfinx</span>
+<span class="kn">import</span> <span class="nn">ufl</span>
+<span class="kn">from</span> <span class="nn">petsc4py</span> <span class="kn">import</span> <span class="n">PETSc</span>
+<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">omega</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">ufl</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">-</span> <span class="n">ufl</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">omega</span><span class="p">(</span><span class="n">uh</span><span class="p">)</span>
+
+<span class="n">theta_xx</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">theta_xy</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">theta_xz</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">theta_yy</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">theta_yz</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">theta_zz</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="n">V_omega</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">functionspace</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;DG&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">rotation_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">theta_yz</span><span class="p">,</span> <span class="n">V_omega</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">rotation_x</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_omega</span><span class="p">)</span>
+<span class="n">rotation_x</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">rotation_expr</span><span class="p">)</span>
+
+<span class="n">rotation_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">theta_xz</span><span class="p">,</span> <span class="n">V_omega</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">rotation_y</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_omega</span><span class="p">)</span>
+<span class="n">rotation_y</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">rotation_expr</span><span class="p">)</span>
+
+<span class="n">rotation_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">theta_xy</span><span class="p">,</span> <span class="n">V_omega</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">rotation_z</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_omega</span><span class="p">)</span>
+<span class="n">rotation_z</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">rotation_expr</span><span class="p">)</span>
+
+<span class="c1"># Calculer la norme de rotation</span>
+<span class="n">norm_theta</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rotation_z</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">rotation_y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">rotation_x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">rotation_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">norm_theta</span><span class="p">,</span> <span class="n">V_omega</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">rotation_norm</span><span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_omega</span><span class="p">)</span>
+<span class="n">rotation_norm</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">rotation_expr</span><span class="p">)</span>
+
+
+<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">dargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span>
+    <span class="n">show_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Normal&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rotation_norm</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Normal&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Normalized rotation&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;RX&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rotation_x</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;RX&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;rotation RX&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;RY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rotation_y</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;RY&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;rotation RY&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;RZ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rotation_z</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;RZ&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;rotation RZ&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="c1"># Lier les vues pour une vue cohérente</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="s1">&#39;iso&#39;</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span>
+<span class="c1"># Afficher le tout</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6ed429b7c1334ce8a22a7013a0f0cf4e", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraction de la valeur maximale RZ</span>
+<span class="n">max_rotation_z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">rotation_z</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_rotation_z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19.888687722452723
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">J</span><span class="o">=</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">R</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="p">(</span><span class="n">mu</span><span class="o">*</span><span class="n">J</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraction de la valeur maximale RZ</span>
+<span class="n">max_rotation_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">rotation_norm</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_rotation_norm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraction de la valeur maximale RZ</span>
+<span class="n">max_rotation_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">rotation_y</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_rotation_y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraction de la valeur maximale RZ</span>
+<span class="n">max_rotation_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">rotation_x</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_rotation_x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Valeur analytique de la rotation maximale (ici, 20 radians)</span>
+<span class="n">theta_analytique</span> <span class="o">=</span> <span class="mf">20.0</span>
+
+<span class="c1"># Valeur numérique récupérée</span>
+<span class="n">theta_numerique</span> <span class="o">=</span> <span class="n">max_rotation_z</span>
+
+<span class="c1"># Calcul de l&#39;erreur absolue</span>
+<span class="n">erreur_absolue</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">theta_analytique</span> <span class="o">-</span> <span class="n">theta_numerique</span><span class="p">)</span>
+
+<span class="c1"># Calcul de l&#39;erreur relative</span>
+<span class="n">erreur_relative</span> <span class="o">=</span> <span class="n">erreur_absolue</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">theta_analytique</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Affichage des résultats</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rotation analytique maximale : </span><span class="si">{</span><span class="n">theta_analytique</span><span class="si">}</span><span class="s2"> radians&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rotation numérique maximale : </span><span class="si">{</span><span class="n">theta_numerique</span><span class="si">}</span><span class="s2"> radians&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur absolue : </span><span class="si">{</span><span class="n">erreur_absolue</span><span class="si">}</span><span class="s2"> radians&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur relative : </span><span class="si">{</span><span class="n">erreur_relative</span><span class="si">}</span><span class="s2"> %&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">dolfinx</span>
+<span class="kn">import</span> <span class="nn">ufl</span>
+<span class="kn">from</span> <span class="nn">petsc4py</span> <span class="kn">import</span> <span class="n">PETSc</span>
+<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Calculer le tenseur de déformation</span>
+<span class="n">sig</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">(</span><span class="n">uh</span><span class="p">)</span>
+
+<span class="c1"># Extraire les composantes du tenseur de déformation</span>
+<span class="n">sig_xx</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">sig_xy</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">sig_xz</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">sig_yy</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">sig_yz</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">sig_zz</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="n">V_sig</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">functionspace</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;DG&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">sig_xx_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">sig_xx</span><span class="p">,</span> <span class="n">V_sig</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">stress_xx</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_sig</span><span class="p">)</span>
+<span class="n">stress_xx</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">sig_xx_expr</span><span class="p">)</span>
+
+<span class="n">sig_yy_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">sig_yy</span><span class="p">,</span> <span class="n">V_sig</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">stress_yy</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_sig</span><span class="p">)</span>
+<span class="n">stress_yy</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">sig_yy_expr</span><span class="p">)</span>
+
+<span class="n">sig_zz_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">sig_zz</span><span class="p">,</span> <span class="n">V_sig</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">stress_zz</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_sig</span><span class="p">)</span>
+<span class="n">stress_zz</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">sig_zz_expr</span><span class="p">)</span>
+
+<span class="n">sig_yz_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">sig_yz</span><span class="p">,</span> <span class="n">V_sig</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">stress_yz</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_sig</span><span class="p">)</span>
+<span class="n">stress_yz</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">sig_yz_expr</span><span class="p">)</span>
+
+<span class="n">sig_xz_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">sig_xz</span><span class="p">,</span> <span class="n">V_sig</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">stress_xz</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_sig</span><span class="p">)</span>
+<span class="n">stress_xz</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">sig_xz_expr</span><span class="p">)</span>
+
+<span class="n">sig_xy_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">sig_xy</span><span class="p">,</span> <span class="n">V_sig</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">stress_xy</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_sig</span><span class="p">)</span>
+<span class="n">stress_xy</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">sig_xy_expr</span><span class="p">)</span>
+
+<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="n">dargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span>
+    <span class="n">show_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Sigma_XX&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stress_xx</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Sigma_XX&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Sigma XX&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Sigma_YY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stress_yy</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Sigma_YY&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Sigma YY&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Sigma_ZZ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stress_zz</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Sigma_ZZ&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Sigma ZZ&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Sigma_YZ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stress_yz</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Sigma_YZ&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Sigma YZ&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Sigma_XZ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stress_xz</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Sigma_XZ&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Sigma XZ&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Sigma_XY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stress_xy</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Sigma_XY&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
+<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Sigma XY&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="c1"># Lier les vues pour une vue cohérente</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="s1">&#39;iso&#39;</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span>
+<span class="c1"># Afficher le tout</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">(</span><span class="n">uh</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">ufl</span><span class="o">.</span><span class="n">tr</span><span class="p">(</span><span class="n">sigma</span><span class="p">(</span><span class="n">uh</span><span class="p">))</span> <span class="o">*</span> <span class="n">ufl</span><span class="o">.</span><span class="n">Identity</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">uh</span><span class="p">))</span>
+<span class="n">von_Mises</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">3.</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">ufl</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
+
+<span class="n">V_von_mises</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">functionspace</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;DG&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">stress_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">von_Mises</span><span class="p">,</span> <span class="n">V_von_mises</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">stresses</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_von_mises</span><span class="p">)</span>
+<span class="n">stresses</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">stress_expr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Créez une nouvelle instance de Plotter</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;VonMises&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stresses</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;VonMises&quot;</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Von Mises&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title_font_size&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s2">&quot;label_font_size&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="s2">&quot;shadow&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;arial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;vertical&quot;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">})</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Von Mises&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;upper_edge&quot;</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">dolfinx</span>
+<span class="kn">import</span> <span class="nn">ufl</span>
+<span class="kn">from</span> <span class="nn">petsc4py</span> <span class="kn">import</span> <span class="n">PETSc</span>
+<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Calculer le tenseur de déformation</span>
+<span class="k">def</span> <span class="nf">epsilon</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">ufl</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="n">ufl</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
+
+<span class="c1"># Calculer le tenseur de déformation</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="n">epsilon</span><span class="p">(</span><span class="n">uh</span><span class="p">)</span>
+
+<span class="c1"># Créer un espace de fonctions pour les données projetées</span>
+<span class="n">V_eps</span> <span class="o">=</span> <span class="n">V</span>
+
+<span class="c1"># Créer une fonction pour stocker les résultats projetés</span>
+<span class="k">def</span> <span class="nf">create_function_from_expression</span><span class="p">(</span><span class="n">eps_component</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="n">dolfinx</span><span class="o">.</span><span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+    <span class="n">expr</span> <span class="o">=</span> <span class="n">dolfinx</span><span class="o">.</span><span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">eps_component</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+    <span class="n">func</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">func</span>
+
+<span class="c1"># Extraire les composantes du tenseur de déformation</span>
+<span class="n">eps_xx</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">eps_xy</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">eps_xz</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">eps_yy</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">eps_yz</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">eps_zz</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Projeter chaque composante du tenseur de déformation dans l&#39;espace de fonctions</span>
+<span class="n">components</span> <span class="o">=</span> <span class="p">[</span><span class="n">eps_xx</span><span class="p">,</span> <span class="n">eps_xy</span><span class="p">,</span> <span class="n">eps_xz</span><span class="p">,</span> <span class="n">eps_yy</span><span class="p">,</span> <span class="n">eps_yz</span><span class="p">,</span> <span class="n">eps_zz</span><span class="p">]</span>
+<span class="n">component_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Epsilon_XX&#39;</span><span class="p">,</span> <span class="s1">&#39;Epsilon_XY&#39;</span><span class="p">,</span> <span class="s1">&#39;Epsilon_XZ&#39;</span><span class="p">,</span> <span class="s1">&#39;Epsilon_YY&#39;</span><span class="p">,</span> <span class="s1">&#39;Epsilon_YZ&#39;</span><span class="p">,</span> <span class="s1">&#39;Epsilon_ZZ&#39;</span><span class="p">]</span>
+
+<span class="c1"># Créez la grille PyVista</span>
+<span class="n">eps_topology</span><span class="p">,</span> <span class="n">eps_cell_types</span><span class="p">,</span> <span class="n">eps_geometry</span> <span class="o">=</span> <span class="n">dolfinx</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">vtk_mesh</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+<span class="n">eps_grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">UnstructuredGrid</span><span class="p">(</span><span class="n">eps_topology</span><span class="p">,</span> <span class="n">eps_cell_types</span><span class="p">,</span> <span class="n">eps_geometry</span><span class="p">)</span>
+
+<span class="c1"># Ajouter chaque composante à la grille PyVista</span>
+<span class="c1">#for i, (component, name) in enumerate(zip(components, component_names)):</span>
+<span class="c1">#    component_func = create_function_from_expression(component, V_eps)</span>
+<span class="c1">#    eps_grid[name] = component_func.x.array</span>
+
+<span class="n">V_von_mises</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">functionspace</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;DG&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">stress_expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">eps_zz</span><span class="p">,</span> <span class="n">V_von_mises</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
+<span class="n">stresses</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_von_mises</span><span class="p">)</span>
+<span class="n">stresses</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">stress_expr</span><span class="p">)</span>
+
+<span class="c1"># Créez une nouvelle instance de Plotter</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;VonMises&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stresses</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
+<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;VonMises&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Von Mises&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title_font_size&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s2">&quot;label_font_size&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="s2">&quot;shadow&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;arial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;vertical&quot;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">})</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Von Mises&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;upper_edge&quot;</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">dolfinx</span>
+<span class="kn">from</span> <span class="nn">dolfinx</span> <span class="kn">import</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">fem</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">io</span><span class="p">,</span> <span class="n">default_scalar_type</span>
+<span class="kn">from</span> <span class="nn">dolfinx.fem.petsc</span> <span class="kn">import</span> <span class="n">LinearProblem</span>
+<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">import</span> <span class="nn">ufl</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">gmsh</span>
+<span class="kn">import</span> <span class="nn">meshio</span>
+<span class="kn">from</span> <span class="nn">dolfinx.io</span> <span class="kn">import</span> <span class="n">XDMFFile</span>
+
+<span class="kn">import</span> <span class="nn">dolfinx.fem</span> <span class="k">as</span> <span class="nn">fem</span>
+<span class="kn">import</span> <span class="nn">dolfinx.mesh</span> <span class="k">as</span> <span class="nn">mesh</span>
+<span class="kn">from</span> <span class="nn">petsc4py</span> <span class="kn">import</span> <span class="n">PETSc</span>
+
+<span class="c1"># Initialisation de GMSH</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;ellipse&quot;</span><span class="p">)</span>
+
+<span class="c1"># Définition des variables</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1"># Demi-grand axe en mètres</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Demi-petit axe en mètres</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># Hauteur du cylindre en mètres</span>
+<span class="n">lc</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># Longueur caractéristique des éléments en mètres</span>
+
+<span class="c1"># Créer une ellipse dans le plan XY au centre (0, 0, 0)</span>
+<span class="n">ellipse</span> <span class="o">=</span> <span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">addEllipse</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># Créer une boucle fermée autour de l&#39;ellipse</span>
+<span class="n">curve_loop</span> <span class="o">=</span> <span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">addCurveLoop</span><span class="p">([</span><span class="n">ellipse</span><span class="p">])</span>
+
+<span class="c1"># Créer une surface à partir de la boucle</span>
+<span class="n">surface</span> <span class="o">=</span> <span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">addPlaneSurface</span><span class="p">([</span><span class="n">curve_loop</span><span class="p">])</span>
+
+<span class="c1"># Extruder cette surface pour créer un cylindre elliptique de hauteur h</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">extrude</span><span class="p">([(</span><span class="mi">2</span><span class="p">,</span> <span class="n">surface</span><span class="p">)],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># Synchronisation de la géométrie</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">synchronize</span><span class="p">()</span>
+
+<span class="c1"># Définir les tailles des éléments</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">setNumber</span><span class="p">(</span><span class="s2">&quot;Mesh.CharacteristicLengthMin&quot;</span><span class="p">,</span> <span class="n">lc</span><span class="p">)</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">setNumber</span><span class="p">(</span><span class="s2">&quot;Mesh.CharacteristicLengthMax&quot;</span><span class="p">,</span> <span class="n">lc</span><span class="p">)</span>
+
+<span class="c1"># Générer le maillage</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 3 pour le maillage en 3D</span>
+
+<span class="c1"># Sauvegarder le maillage dans un fichier .msh</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;ellipse.msh&quot;</span><span class="p">)</span>
+
+<span class="c1"># Finaliser GMSH</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="c1"># Lire le fichier .msh avec meshio</span>
+<span class="n">msh</span> <span class="o">=</span> <span class="n">meshio</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;ellipse.msh&quot;</span><span class="p">)</span>
+
+<span class="c1"># Sauvegarder le maillage en format XDMF</span>
+<span class="n">meshio</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;ellipse.xdmf&quot;</span><span class="p">,</span> <span class="n">meshio</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">msh</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">cells</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;tetra&quot;</span><span class="p">:</span> <span class="n">msh</span><span class="o">.</span><span class="n">cells_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tetra&quot;</span><span class="p">,</span> <span class="p">[])}))</span>
+
+<span class="c1"># Lire le fichier .xdmf avec Dolfinx</span>
+<span class="k">with</span> <span class="n">XDMFFile</span><span class="p">(</span><span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span><span class="p">,</span> <span class="s2">&quot;ellipse.xdmf&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">xdmf_file</span><span class="p">:</span>
+    <span class="n">domain</span> <span class="o">=</span> <span class="n">xdmf_file</span><span class="o">.</span><span class="n">read_mesh</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Grid&quot;</span><span class="p">)</span>
+    <span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">create_connectivity</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+
+<span class="c1"># Afficher des informations sur le maillage</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maillage créé avec succès.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nombre de sommets : </span><span class="si">{</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">index_map</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">size_global</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nombre d&#39;éléments : </span><span class="si">{</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">index_map</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">size_global</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">dolfinx</span>
+<span class="kn">from</span> <span class="nn">dolfinx</span> <span class="kn">import</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">fem</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">io</span><span class="p">,</span> <span class="n">default_scalar_type</span>
+<span class="kn">from</span> <span class="nn">dolfinx.fem.petsc</span> <span class="kn">import</span> <span class="n">LinearProblem</span>
+<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">import</span> <span class="nn">ufl</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">gmsh</span>
+<span class="kn">import</span> <span class="nn">meshio</span>
+<span class="kn">from</span> <span class="nn">dolfinx.io</span> <span class="kn">import</span> <span class="n">XDMFFile</span>
+
+<span class="kn">import</span> <span class="nn">dolfinx.fem</span> <span class="k">as</span> <span class="nn">fem</span>
+<span class="kn">import</span> <span class="nn">dolfinx.mesh</span> <span class="k">as</span> <span class="nn">mesh</span>
+<span class="kn">from</span> <span class="nn">petsc4py</span> <span class="kn">import</span> <span class="n">PETSc</span>
+
+<span class="c1"># Initialisation de GMSH</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;cylindre&quot;</span><span class="p">)</span>
+
+<span class="c1"># Définir les paramètres du cylindre</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="c1"># 3 cm en mètres</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 18 cm en mètres</span>
+<span class="n">lc</span> <span class="o">=</span> <span class="mf">0.1</span>    <span class="c1"># Longueur caractéristique des éléments en mètres</span>
+
+<span class="c1"># Créer un cylindre</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">addCylinder</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+
+<span class="c1"># Synchronisation de la géométrie</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">occ</span><span class="o">.</span><span class="n">synchronize</span><span class="p">()</span>
+
+<span class="c1"># Définir les tailles des éléments</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">setNumber</span><span class="p">(</span><span class="s2">&quot;Mesh.CharacteristicLengthMin&quot;</span><span class="p">,</span> <span class="n">lc</span><span class="p">)</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">setNumber</span><span class="p">(</span><span class="s2">&quot;Mesh.CharacteristicLengthMax&quot;</span><span class="p">,</span> <span class="n">lc</span><span class="p">)</span>
+
+<span class="c1"># Générer le maillage</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 3 pour le maillage en 3D</span>
+
+<span class="c1"># Sauvegarder le maillage dans un fichier .msh</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;cylindre.msh&quot;</span><span class="p">)</span>
+
+<span class="c1"># Finaliser GMSH</span>
+<span class="n">gmsh</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="c1"># Lire le fichier .msh avec meshio</span>
+<span class="n">msh</span> <span class="o">=</span> <span class="n">meshio</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;cylindre.msh&quot;</span><span class="p">)</span>
+
+<span class="c1"># Sauvegarder le maillage en format XDMF</span>
+<span class="n">meshio</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;cylindre.xdmf&quot;</span><span class="p">,</span> <span class="n">meshio</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">msh</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">cells</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;tetra&quot;</span><span class="p">:</span> <span class="n">msh</span><span class="o">.</span><span class="n">cells_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tetra&quot;</span><span class="p">,</span> <span class="p">[])}))</span>
+
+<span class="c1"># Lire le fichier .xdmf avec Dolfinx</span>
+<span class="k">with</span> <span class="n">XDMFFile</span><span class="p">(</span><span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span><span class="p">,</span> <span class="s2">&quot;cylindre.xdmf&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">xdmf_file</span><span class="p">:</span>
+    <span class="n">domain</span> <span class="o">=</span> <span class="n">xdmf_file</span><span class="o">.</span><span class="n">read_mesh</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Grid&quot;</span><span class="p">)</span>
+    <span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">create_connectivity</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+
+<span class="c1"># Afficher des informations sur le maillage</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maillage créé avec succès.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nombre de sommets : </span><span class="si">{</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">index_map</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">size_global</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nombre d&#39;éléments : </span><span class="si">{</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">index_map</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">dim</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">size_global</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "fenicsx-env"
+        },
+        kernelOptions: {
+            name: "fenicsx-env",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'fenicsx-env'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Salam to your Jupyter Book</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Untitled.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Untittled</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
