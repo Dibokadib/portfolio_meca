@@ -361,6 +361,23 @@
   <section class="tex2jax_ignore mathjax_ignore" id="untittled">
 <h1>Untittled<a class="headerlink" href="#untittled" title="Link to this heading">#</a></h1>
 <p>Bonjour</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">(</span><span class="s1">&#39;vtk&#39;</span><span class="p">)</span>
+
+<span class="c1"># Créer le plotter PyVista</span>
+<span class="n">plotter</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">pv</span><span class="o">.</span><span class="n">Plane</span><span class="p">(</span><span class="n">i_size</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">j_size</span><span class="o">=</span><span class="mf">1.0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="c1"># Utiliser Panel pour créer un rendu interactif</span>
+<span class="n">interactive_panel</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">VTK</span><span class="p">(</span><span class="n">plotter</span><span class="o">.</span><span class="n">ren_win</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
