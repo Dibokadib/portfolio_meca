@@ -402,9 +402,14 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="probleme-torsion-d-arbres">
 <h1>Problème torsion d’arbres<a class="headerlink" href="#probleme-torsion-d-arbres" title="Link to this heading">#</a></h1>
- <details> <summary>Cliquez pour voir le code d'importation</summary> <section id="librairies">
+<section id="librairies">
 <h2>Librairies<a class="headerlink" href="#librairies" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importation des librairies</span>
 <span class="kn">import</span> <span class="nn">dolfinx</span>  <span class="c1"># Module principal de FEniCSx pour le calcul par éléments finis</span>
@@ -425,13 +430,19 @@
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="geometrie">
 <h2>Géométrie<a class="headerlink" href="#geometrie" title="Link to this heading">#</a></h2>
 <section id="definition-de-la-geometrie-et-du-maillage">
 <h3>Définition de la géométrie et du maillage<a class="headerlink" href="#definition-de-la-geometrie-et-du-maillage" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell tag_remove-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialisation de GMSH</span>
 <span class="n">gmsh</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
@@ -491,137 +502,12 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Info    : Meshing 1D...
-Info    : [  0%] Meshing curve 1 (Ellipse)
-Info    : [ 40%] Meshing curve 2 (Line)
-Info    : [ 70%] Meshing curve 3 (Ellipse)
-Info    : Done meshing 1D (Wall 0.000180208s, CPU 0.000281s)
-Info    : Meshing 2D...
-Info    : [  0%] Meshing surface 1 (Plane, Frontal-Delaunay)
-Info    : [ 40%] Meshing surface 2 (Unknown, Frontal-Delaunay)
-Info    : [ 70%] Meshing surface 3 (Plane, Frontal-Delaunay)
-Info    : Done meshing 2D (Wall 0.147277s, CPU 0.145253s)
-Info    : Meshing 3D...
-Info    : 3D Meshing 1 volume with 1 connected component
-Info    : Tetrahedrizing 4451 nodes...
-Info    : Done tetrahedrizing 4459 nodes (Wall 0.0351463s, CPU 0.034488s)
-Info    : Reconstructing mesh...
-Info    :  - Creating surface mesh
-Info    :  - Identifying boundary edges
-Info    :  - Recovering boundary
-Info    : Done reconstructing mesh (Wall 0.175801s, CPU 0.171741s)
-Info    : Found volume 1
-Info    : It. 0 - 0 nodes created - worst tet radius 10.6389 (nodes removed 0 0)
-Info    : It. 500 - 500 nodes created - worst tet radius 2.41203 (nodes removed 0 0)
-Info    : It. 1000 - 1000 nodes created - worst tet radius 1.99078 (nodes removed 0 0)
-Info    : It. 1500 - 1500 nodes created - worst tet radius 1.7586 (nodes removed 0 0)
-Info    : It. 2000 - 2000 nodes created - worst tet radius 1.61403 (nodes removed 0 0)
-Info    : It. 2500 - 2500 nodes created - worst tet radius 1.50464 (nodes removed 0 0)
-Info    : It. 3000 - 3000 nodes created - worst tet radius 1.42427 (nodes removed 0 0)
-Info    : It. 3500 - 3500 nodes created - worst tet radius 1.35923 (nodes removed 0 0)
-Info    : It. 4000 - 4000 nodes created - worst tet radius 1.30401 (nodes removed 0 0)
-Info    : It. 4500 - 4500 nodes created - worst tet radius 1.25867 (nodes removed 0 0)
-Info    : It. 5000 - 5000 nodes created - worst tet radius 1.21836 (nodes removed 0 0)
-Info    : It. 5500 - 5500 nodes created - worst tet radius 1.18389 (nodes removed 0 0)
-Info    : It. 6000 - 6000 nodes created - worst tet radius 1.15277 (nodes removed 0 0)
-Info    : It. 6500 - 6500 nodes created - worst tet radius 1.1238 (nodes removed 0 0)
-Info    : It. 7000 - 7000 nodes created - worst tet radius 1.09731 (nodes removed 0 0)
-Info    : It. 7500 - 7500 nodes created - worst tet radius 1.07278 (nodes removed 0 0)
-Info    : It. 8000 - 8000 nodes created - worst tet radius 1.05221 (nodes removed 0 0)
-Info    : It. 8500 - 8500 nodes created - worst tet radius 1.03248 (nodes removed 0 0)
-Info    : It. 9000 - 9000 nodes created - worst tet radius 1.01447 (nodes removed 0 0)
-Info    : 3D refinement terminated (13870 nodes total):
-Info    :  - 0 Delaunay cavities modified for star shapeness
-Info    :  - 0 nodes could not be inserted
-Info    :  - 73654 tetrahedra created in 0.298974 sec. (246356 tets/s)
-Info    : 0 node relocations
-Info    : Done meshing 3D (Wall 0.721429s, CPU 0.711275s)
-Info    : Optimizing mesh...
-Info    : Optimizing volume 1
-Info    : Optimization starts (volume = 0.125509) with worst = 0.0113981 / average = 0.782282:
-Info    : 0.00 &lt; quality &lt; 0.10 :       134 elements
-Info    : 0.10 &lt; quality &lt; 0.20 :       485 elements
-Info    : 0.20 &lt; quality &lt; 0.30 :       817 elements
-Info    : 0.30 &lt; quality &lt; 0.40 :      1291 elements
-Info    : 0.40 &lt; quality &lt; 0.50 :      1968 elements
-Info    : 0.50 &lt; quality &lt; 0.60 :      3169 elements
-Info    : 0.60 &lt; quality &lt; 0.70 :      6939 elements
-Info    : 0.70 &lt; quality &lt; 0.80 :     16760 elements
-Info    : 0.80 &lt; quality &lt; 0.90 :     28032 elements
-Info    : 0.90 &lt; quality &lt; 1.00 :     14059 elements
-Info    : 1429 edge swaps, 43 node relocations (volume = 0.125509): worst = 0.17436 / average = 0.794378 (Wall 0.014148s, CPU 0.014002s)
-Info    : 1438 edge swaps, 43 node relocations (volume = 0.125509): worst = 0.294127 / average = 0.794458 (Wall 0.0163797s, CPU 0.016244s)
-Info    : No ill-shaped tets in the mesh :-)
-Info    : 0.00 &lt; quality &lt; 0.10 :         0 elements
-Info    : 0.10 &lt; quality &lt; 0.20 :         0 elements
-Info    : 0.20 &lt; quality &lt; 0.30 :         1 elements
-Info    : 0.30 &lt; quality &lt; 0.40 :      1273 elements
-Info    : 0.40 &lt; quality &lt; 0.50 :      1897 elements
-Info    : 0.50 &lt; quality &lt; 0.60 :      3085 elements
-Info    : 0.60 &lt; quality &lt; 0.70 :      6920 elements
-Info    : 0.70 &lt; quality &lt; 0.80 :     16934 elements
-Info    : 0.80 &lt; quality &lt; 0.90 :     28282 elements
-Info    : 0.90 &lt; quality &lt; 1.00 :     13984 elements
-Info    : Done optimizing mesh (Wall 0.0569539s, CPU 0.05446s)
-Info    : 13870 nodes 81452 elements
-Info    : Writing &#39;ellipse.msh&#39;...
-Info    : Done writing &#39;ellipse.msh&#39;
-
-Maillage créé et importé avec succès.
-Nombre de sommets : 72376
-Nombre d&#39;éléments : 149201
-</pre></div>
-</div>
-</div>
+</details>
 </div>
 </section>
 <section id="visualisation-de-la-geometrie">
 <h3>Visualisation de la géométrie<a class="headerlink" href="#visualisation-de-la-geometrie" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Préparation du maillage pour la visualisation avec PyVista</span>
-<span class="n">u_topology</span><span class="p">,</span> <span class="n">u_cell_types</span><span class="p">,</span> <span class="n">u_geometry</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">vtk_mesh</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
-
-<span class="c1"># Création d&#39;une grille non structurée PyVista à partir des données du maillage FEniCSx</span>
-<span class="n">u_grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">UnstructuredGrid</span><span class="p">(</span><span class="n">u_topology</span><span class="p">,</span> <span class="n">u_cell_types</span><span class="p">,</span> <span class="n">u_geometry</span><span class="p">)</span>
-
-<span class="c1"># Initialisation de l&#39;environnement de visualisation PyVista</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
-
-<span class="c1"># Ajout du maillage à la scène de visualisation</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="p">,</span> 
-           <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Affiche les arêtes du maillage</span>
-           <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span>
-               <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;u&quot;</span><span class="p">,</span>  <span class="c1"># Titre de la barre de couleur</span>
-               <span class="s2">&quot;title_font_size&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
-               <span class="s2">&quot;label_font_size&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-               <span class="s2">&quot;shadow&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-               <span class="s2">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-               <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;arial&quot;</span><span class="p">,</span>
-               <span class="s2">&quot;vertical&quot;</span><span class="p">:</span> <span class="kc">False</span>  <span class="c1"># Orientation horizontale de la barre de couleur</span>
-           <span class="p">})</span>
-
-<span class="c1"># Ajout d&#39;un titre à la visualisation</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Cylindre Mesh&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;upper_edge&quot;</span><span class="p">)</span>
-
-<span class="c1"># Ajout des limites de la boîte englobante</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show_bounds</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-
-<span class="c1"># Ajout des axes de coordonnées</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-
-<span class="c1"># Définition de la couleur de fond</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
-
-<span class="c1"># Affichage de la visualisation</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="c1"># Changement de la vue pour une perspective Y-Z</span>
-<span class="n">p</span><span class="o">.</span><span class="n">view_yz</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "e570f38006ff444c83724821c27bb046", "version_major": 2, "version_minor": 0}</script></div>
 </div>
@@ -642,7 +528,12 @@ Nombre d&#39;éléments : 149201
 </section>
 <section id="definition-des-frontiere-du-domaine">
 <h3>Définition des frontière du domaine<a class="headerlink" href="#definition-des-frontiere-du-domaine" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition des fonctions pour identifier les différentes faces du cylindre</span>
 <span class="k">def</span> <span class="nf">down_face</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -684,122 +575,22 @@ Nombre d&#39;éléments : 149201
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="visualisation-des-frontiere-du-domaine">
 <h3>Visualisation des frontière du domaine<a class="headerlink" href="#visualisation-des-frontiere-du-domaine" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition d&#39;une fonction pour appliquer des marqueurs aux facettes</span>
-<span class="k">def</span> <span class="nf">apply_marker</span><span class="p">(</span><span class="n">boundary_facets</span><span class="p">,</span> <span class="n">marker_array</span><span class="p">,</span> <span class="n">marker_value</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Applique un marqueur spécifique aux facettes de la frontière.</span>
-<span class="sd">    </span>
-<span class="sd">    Args:</span>
-<span class="sd">    boundary_facets: Indices des facettes de la frontière</span>
-<span class="sd">    marker_array: Tableau des marqueurs à mettre à jour</span>
-<span class="sd">    marker_value: Valeur du marqueur à appliquer</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Filtrer les facettes pour ne garder que celles appartenant au domaine local</span>
-    <span class="n">boundary_facets</span> <span class="o">=</span> <span class="n">boundary_facets</span><span class="p">[</span><span class="n">boundary_facets</span> <span class="o">&lt;</span> <span class="n">num_cells_local</span><span class="p">]</span>
-    <span class="c1"># Appliquer le marqueur</span>
-    <span class="n">marker_array</span><span class="p">[</span><span class="n">boundary_facets</span><span class="p">]</span> <span class="o">=</span> <span class="n">marker_value</span>
-
-<span class="c1"># Obtenir le nombre de cellules locales (important pour le calcul parallèle)</span>
-<span class="n">num_cells_local</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">index_map</span><span class="p">(</span><span class="n">fdim</span><span class="p">)</span><span class="o">.</span><span class="n">size_local</span>
-
-<span class="c1"># Initialiser les tableaux de marqueurs pour chaque type de frontière</span>
-<span class="c1"># On crée 4 tableaux : 3 pour chaque face et 1 pour la combinaison</span>
-<span class="n">markers</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_cells_local</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
-
-<span class="c1"># Appliquer les marqueurs spécifiques à chaque face</span>
-<span class="n">apply_marker</span><span class="p">(</span><span class="n">Sigma_0</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Face inférieure (z = 0)</span>
-<span class="n">apply_marker</span><span class="p">(</span><span class="n">Sigma_h</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Face supérieure (z = h)</span>
-<span class="n">apply_marker</span><span class="p">(</span><span class="n">Sigma_l</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Surface latérale</span>
-
-<span class="c1"># Calculer le marqueur combiné</span>
-<span class="n">markers</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">markers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">markers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">markers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-
-<span class="c1"># Ajouter un marqueur spécifique (4) pour les cellules non marquées</span>
-<span class="c1"># Cela peut être utile pour identifier le volume intérieur, par exemple</span>
-<span class="n">markers</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="n">markers</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
-
-<span class="c1"># Créer la connectivité topologique pour les facettes</span>
-<span class="c1"># Ceci est nécessaire pour certaines opérations sur le maillage</span>
-<span class="n">domain</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">create_connectivity</span><span class="p">(</span><span class="n">fdim</span><span class="p">,</span> <span class="n">fdim</span><span class="p">)</span>
-
-<span class="c1"># Obtenir les données de maillage au format compatible avec PyVista</span>
-<span class="n">topology</span><span class="p">,</span> <span class="n">cell_types</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">dolfinx</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">vtk_mesh</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">fdim</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_cells_local</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
-</pre></div>
+<div class="cell tag_remove-input docutils container">
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du maillage PyVista à partir des données FEniCSx</span>
-<span class="n">grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">UnstructuredGrid</span><span class="p">(</span><span class="n">topology</span><span class="p">,</span> <span class="n">cell_types</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">add_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">marker</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">threshold_min</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Fonction pour ajouter des maillages à une sous-fenêtre de visualisation.</span>
-<span class="sd">    </span>
-<span class="sd">    Args:</span>
-<span class="sd">    ax: Axe de la sous-fenêtre PyVista</span>
-<span class="sd">    marker: Tableau des marqueurs pour les cellules</span>
-<span class="sd">    color: Couleur pour les cellules filtrées</span>
-<span class="sd">    title: Titre de la sous-fenêtre</span>
-<span class="sd">    threshold_min: Valeur minimale pour le filtrage des cellules</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Mise à jour des données de cellule du maillage avec les marqueurs</span>
-    <span class="n">grid</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;Marker&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">marker</span>
-    <span class="n">grid</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;Marker&quot;</span><span class="p">)</span>
-    
-    <span class="c1"># Ajout du maillage complet avec les marqueurs</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Boundary Marker&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;title_font_size&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
-        <span class="s2">&quot;label_font_size&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-        <span class="s2">&quot;shadow&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s2">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;arial&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;vertical&quot;</span><span class="p">:</span> <span class="kc">False</span>
-    <span class="p">})</span>
-    
-    <span class="c1"># Application d&#39;un filtre basé sur le seuil pour isoler certaines cellules</span>
-    <span class="n">grid_filter</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">threshold_min</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="s1">&#39;Marker&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">grid_filter</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    
-    <span class="c1"># Ajout du titre et des axes à la sous-fenêtre</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;upper_edge&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-
-<span class="c1"># Configuration de la visualisation PyVista avec 4 sous-fenêtres (2x2)</span>
-<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-
-<span class="c1"># Sous-fenêtre 1 : Affichage de toutes les frontières</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">add_plot</span><span class="p">(</span><span class="n">pl</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;All Boundaries&quot;</span><span class="p">,</span> <span class="n">threshold_min</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-
-<span class="c1"># Sous-fenêtre 2 : Affichage de la frontière inférieure</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">add_plot</span><span class="p">(</span><span class="n">pl</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Down Boundary&quot;</span><span class="p">,</span> <span class="n">threshold_min</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-
-<span class="c1"># Sous-fenêtre 3 : Affichage de la frontière supérieure</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">add_plot</span><span class="p">(</span><span class="n">pl</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Top Boundary&quot;</span><span class="p">,</span> <span class="n">threshold_min</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
-
-<span class="c1"># Sous-fenêtre 4 : Affichage de la frontière latérale</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">add_plot</span><span class="p">(</span><span class="n">pl</span><span class="p">,</span> <span class="n">markers</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Lateral Boundary&quot;</span><span class="p">,</span> <span class="n">threshold_min</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
-
-<span class="c1"># Configuration finale et affichage</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "c2fe3d6daa754662a998209a5460413d", "version_major": 2, "version_minor": 0}</script></div>
+</details>
 </div>
 </section>
 </section>
@@ -833,36 +624,7 @@ Nombre d&#39;éléments : 149201
 </section>
 <section id="definition-des-chargements">
 <h2>Définition des chargements<a class="headerlink" href="#definition-des-chargements" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>  <span class="c1"># Nombre Pi</span>
-
-<span class="n">ang</span> <span class="o">=</span> <span class="mf">20.0</span>  <span class="c1"># Angle de torsion en radians</span>
-
-<span class="c1"># Calcul du taux de torsion α</span>
-<span class="n">alpha</span> <span class="o">=</span> <span class="n">ang</span> <span class="o">/</span> <span class="n">h</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;α = </span><span class="si">{</span><span class="n">alpha</span><span class="si">}</span><span class="s2"> m^-1&quot;</span><span class="p">)</span>
-
-<span class="c1"># Calcul de la rigidité en torsion C</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">R</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">alpha</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;C = </span><span class="si">{</span><span class="n">C</span><span class="si">}</span><span class="s2"> kg.m^2/s&quot;</span><span class="p">)</span>
-
-<span class="c1"># Calcul de la constante A pour le champ de torsion</span>
-<span class="n">A</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">C</span> <span class="o">/</span> <span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">R</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># A est un scalaire constant positif</span>
-
-<span class="c1"># Définition des coordonnées spatiales</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">SpatialCoordinate</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
-
-<span class="c1"># Définition des composantes du champ de torsion (vecteur des Contraintes de Cauchy)</span>
-<span class="n">T1</span> <span class="o">=</span> <span class="o">-</span><span class="n">A</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Composante x du champ de torsion</span>
-<span class="n">T2</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>   <span class="c1"># Composante y du champ de torsion</span>
-<span class="n">T3</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">as_ufl</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>  <span class="c1"># Composante z nulle, convertie en expression UFL</span>
-
-<span class="c1"># Combinaison en un champ vectoriel de torsion</span>
-<span class="n">T</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">as_vector</span><span class="p">([</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">T3</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>α = 20.0 m^-1
 C = 1005309649.1487346 kg.m^2/s
@@ -873,7 +635,12 @@ C = 1005309649.1487346 kg.m^2/s
 </section>
 <section id="resolution">
 <h2>Résolution<a class="headerlink" href="#resolution" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition des tenseurs de déformation et de contrainte</span>
 <span class="k">def</span> <span class="nf">epsilon</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
@@ -902,362 +669,32 @@ C = 1005309649.1487346 kg.m^2/s
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <section id="visualisation-des-resultats">
 <h3>Visualisation des résultats<a class="headerlink" href="#visualisation-des-resultats" title="Link to this heading">#</a></h3>
 </section>
 <section id="visualisation-des-deplacements">
 <h3>Visualisation des déplacements<a class="headerlink" href="#visualisation-des-deplacements" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création du maillage pour PyVista basé sur les coordonnées des dofs</span>
-<span class="n">u_topology</span><span class="p">,</span> <span class="n">u_cell_types</span><span class="p">,</span> <span class="n">u_geometry</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">vtk_mesh</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
-
-<span class="c1"># Créez la grille PyVista et ajoutez les valeurs des dofs à la grille</span>
-<span class="n">u_grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">UnstructuredGrid</span><span class="p">(</span><span class="n">u_topology</span><span class="p">,</span> <span class="n">u_cell_types</span><span class="p">,</span> <span class="n">u_geometry</span><span class="p">)</span>
-
-<span class="c1"># Attach vector values to grid and warp grid by vector</span>
-<span class="n">u_grid</span><span class="p">[</span><span class="s2">&quot;u&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">uh</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">u_geometry</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>
-
-<span class="c1"># Visualisation</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span>
-    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;u&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;title_font_size&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
-    <span class="s2">&quot;label_font_size&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-    <span class="s2">&quot;shadow&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s2">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;arial&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;vertical&quot;</span><span class="p">:</span> <span class="kc">False</span>
-<span class="p">})</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Déplacements&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;upper_edge&quot;</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "3b8dd664eeb14a7ca025e4fa2fa653a0", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="visualisation-des-rotations-principales">
 <h3>Visualisation des rotations principales<a class="headerlink" href="#visualisation-des-rotations-principales" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">omega</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calcule le tenseur de rotation (partie antisymétrique du gradient de déplacement)&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">ufl</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">-</span> <span class="n">ufl</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
-
-<span class="c1"># Calcul du tenseur de rotation</span>
-<span class="n">theta</span> <span class="o">=</span> <span class="n">omega</span><span class="p">(</span><span class="n">uh</span><span class="p">)</span>
-
-<span class="c1"># Extraction des composantes du tenseur de rotation</span>
-<span class="n">theta_xy</span><span class="p">,</span> <span class="n">theta_xz</span><span class="p">,</span> <span class="n">theta_yz</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-
-<span class="c1"># Définition de l&#39;espace fonctionnel pour les rotations (éléments discontinus d&#39;ordre 0)</span>
-<span class="n">V_omega</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">functionspace</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;DG&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">interpolate_rotation</span><span class="p">(</span><span class="n">rotation_component</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interpole une composante de rotation sur l&#39;espace fonctionnel&quot;&quot;&quot;</span>
-    <span class="n">expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">rotation_component</span><span class="p">,</span> <span class="n">V_omega</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
-    <span class="n">rotation</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_omega</span><span class="p">)</span>
-    <span class="n">rotation</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">rotation</span>
-
-<span class="c1"># Interpolation des composantes de rotation</span>
-<span class="n">rotation_x</span> <span class="o">=</span> <span class="n">interpolate_rotation</span><span class="p">(</span><span class="n">theta_yz</span><span class="p">)</span>
-<span class="n">rotation_y</span> <span class="o">=</span> <span class="n">interpolate_rotation</span><span class="p">(</span><span class="o">-</span><span class="n">theta_xz</span><span class="p">)</span>  <span class="c1"># Note le signe négatif</span>
-<span class="n">rotation_z</span> <span class="o">=</span> <span class="n">interpolate_rotation</span><span class="p">(</span><span class="n">theta_xy</span><span class="p">)</span>
-
-<span class="c1"># Calcul de la norme de rotation</span>
-<span class="n">norm_theta</span> <span class="o">=</span> <span class="n">ufl</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">theta_xy</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">theta_xz</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">theta_yz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">rotation_norm</span> <span class="o">=</span> <span class="n">interpolate_rotation</span><span class="p">(</span><span class="n">norm_theta</span><span class="p">)</span>
-
-<span class="c1"># Configuration de la visualisation</span>
-<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="n">dargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span> <span class="n">show_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">warped</span> <span class="o">=</span> <span class="n">u_grid</span><span class="o">.</span><span class="n">warp_by_vector</span><span class="p">(</span><span class="s2">&quot;u&quot;</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Pas de déformation pour visualiser les déformations</span>
-
-<span class="k">def</span> <span class="nf">add_subplot</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Ajoute un sous-plot pour une composante de rotation&quot;&quot;&quot;</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
-    <span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="n">title</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
-    <span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-
-<span class="c1"># Création des sous-plots</span>
-<span class="n">add_subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">rotation_norm</span><span class="p">,</span> <span class="s2">&quot;Norme de rotation&quot;</span><span class="p">)</span>
-<span class="n">add_subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">rotation_x</span><span class="p">,</span> <span class="s2">&quot;Rotation RX&quot;</span><span class="p">)</span>
-<span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">rotation_y</span><span class="p">,</span> <span class="s2">&quot;Rotation RY&quot;</span><span class="p">)</span>
-<span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">rotation_z</span><span class="p">,</span> <span class="s2">&quot;Rotation RZ&quot;</span><span class="p">)</span>
-
-<span class="c1"># Configuration finale</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="s1">&#39;iso&#39;</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span>
-
-<span class="c1"># Ajout d&#39;une barre de couleur globale</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_scalar_bar</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Rotation (rad)&quot;</span><span class="p">,</span> <span class="n">n_labels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label_font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">title_font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> 
-                  <span class="n">position_x</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">position_y</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-
-<span class="c1"># Affichage</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "e157eef171104e2c85989fcd7f8db966", "version_major": 2, "version_minor": 0}</script></div>
-</div>
 </section>
 <section id="visualisation-des-deplacements-amplifies">
 <h3>Visualisation des déplacements amplifiés<a class="headerlink" href="#visualisation-des-deplacements-amplifies" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création d&#39;un objet Plotter PyVista pour la visualisation 3D</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
-
-<span class="c1"># Application de la déformation au maillage</span>
-<span class="c1"># Le facteur 0.04 amplifie la déformation pour une meilleure visibilité</span>
-<span class="n">warped</span> <span class="o">=</span> <span class="n">u_grid</span><span class="o">.</span><span class="n">warp_by_vector</span><span class="p">(</span><span class="s2">&quot;u&quot;</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.07</span><span class="p">)</span>
-
-<span class="c1"># Ajout du maillage déformé à la scène</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> 
-           <span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Affiche les arêtes du maillage</span>
-           <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span>
-               <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Déplacement&quot;</span><span class="p">,</span>  <span class="c1"># Titre de la barre de couleur</span>
-               <span class="s2">&quot;title_font_size&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
-               <span class="s2">&quot;label_font_size&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-               <span class="c1">#&quot;shadow&quot;: True,</span>
-               <span class="s2">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-               <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;arial&quot;</span><span class="p">,</span>
-               <span class="s2">&quot;vertical&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>  <span class="c1"># Orientation horizontale de la barre de couleur</span>
-               <span class="s2">&quot;n_labels&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>  <span class="c1"># Nombre d&#39;étiquettes sur la barre de couleur</span>
-               <span class="c1">#&quot;fmt&quot;: &quot;%.2e&quot;  # Format scientifique pour les valeurs</span>
-           <span class="p">})</span>
-
-<span class="c1"># Ajout d&#39;un titre à la visualisation</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Déplacements amplifiés&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;upper_edge&quot;</span><span class="p">)</span>
-
-<span class="c1"># Ajout des axes de coordonnées</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-
-<span class="c1"># Configuration de l&#39;arrière-plan et de l&#39;éclairage</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
-<span class="c1">#p.enable_shadows()  # Ajoute des ombres pour améliorer la perception 3D</span>
-
-<span class="c1"># Configuration de la caméra pour une vue optimale</span>
-<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
-
-<span class="c1"># Affichage de la visualisation</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2aa3639336144ef1a8f033f3eb0ccb58", "version_major": 2, "version_minor": 0}</script></div>
-</div>
 </section>
 <section id="visualisation-des-deplacements-normalises-et-selon-les-axes-principaux">
 <h3>Visualisation des déplacements normalisés et selon les axes principaux<a class="headerlink" href="#visualisation-des-deplacements-normalises-et-selon-les-axes-principaux" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition des arguments communs pour l&#39;affichage des maillages</span>
-<span class="n">dargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-    <span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;u&quot;</span><span class="p">,</span>       <span class="c1"># Utilise le champ de déplacement &#39;u&#39; pour la coloration</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span>        <span class="c1"># Utilise la palette de couleurs &#39;jet&#39;</span>
-    <span class="n">show_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Ne pas afficher la barre de couleur pour chaque sous-plot</span>
-<span class="p">)</span>
-
-<span class="c1"># Création d&#39;un plotter PyVista avec une grille 2x2 de sous-plots</span>
-<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-
-<span class="c1"># Sous-plot 0,0 : Déplacement normalisé (magnitude)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Normalized Displacement&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># Sous-plot 0,1 : Déplacement selon X</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">component</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;X Displacement&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># Sous-plot 1,0 : Déplacement selon Y</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">component</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Y Displacement&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># Sous-plot 1,1 : Déplacement selon Z</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">u_grid</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">component</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Z Displacement&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># Configuration globale de la visualisation</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>  <span class="c1"># Lie les vues des sous-plots pour une navigation synchronisée</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="s1">&#39;iso&#39;</span>  <span class="c1"># Vue isométrique</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span>  <span class="c1"># Couleur de fond grise</span>
-
-<span class="c1"># Ajout d&#39;une barre de couleur globale</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_scalar_bar</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Displacement (m)&quot;</span><span class="p">,</span> <span class="n">n_labels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label_font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">title_font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">position_x</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">position_y</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-
-<span class="c1"># Affichage de la visualisation</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6acccbf11b9f466fa1aae5e7bf3f020c", "version_major": 2, "version_minor": 0}</script></div>
-</div>
 </section>
 <section id="visualisation-des-composantes-du-tenseur-des-deformations">
 <h3>Visualisation des composantes du tenseur des déformations<a class="headerlink" href="#visualisation-des-composantes-du-tenseur-des-deformations" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcul du tenseur de déformation</span>
-<span class="n">eps</span> <span class="o">=</span> <span class="n">epsilon</span><span class="p">(</span><span class="n">uh</span><span class="p">)</span>
-
-<span class="c1"># Extraction des composantes du tenseur de déformation</span>
-<span class="n">eps_xx</span><span class="p">,</span> <span class="n">eps_xy</span><span class="p">,</span> <span class="n">eps_xz</span> <span class="o">=</span> <span class="n">eps</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">eps</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">eps</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">eps_yy</span><span class="p">,</span> <span class="n">eps_yz</span> <span class="o">=</span> <span class="n">eps</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">eps</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">eps_zz</span> <span class="o">=</span> <span class="n">eps</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-
-<span class="c1"># Création de la grille PyVista</span>
-<span class="n">eps_topology</span><span class="p">,</span> <span class="n">eps_cell_types</span><span class="p">,</span> <span class="n">eps_geometry</span> <span class="o">=</span> <span class="n">dolfinx</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">vtk_mesh</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
-<span class="n">eps_grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">UnstructuredGrid</span><span class="p">(</span><span class="n">eps_topology</span><span class="p">,</span> <span class="n">eps_cell_types</span><span class="p">,</span> <span class="n">eps_geometry</span><span class="p">)</span>
-
-<span class="c1"># Définition de l&#39;espace fonctionnel pour les déformations (éléments discontinus d&#39;ordre 0)</span>
-<span class="n">V_eps</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">functionspace</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;DG&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-
-<span class="c1"># Fonction pour interpoler les composantes de déformation</span>
-<span class="k">def</span> <span class="nf">interpolate_strain</span><span class="p">(</span><span class="n">eps_component</span><span class="p">):</span>
-    <span class="n">expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">eps_component</span><span class="p">,</span> <span class="n">V_eps</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
-    <span class="n">strain</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_eps</span><span class="p">)</span>
-    <span class="n">strain</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">strain</span>
-
-<span class="c1"># Interpolation des composantes de déformation</span>
-<span class="n">strain_components</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;XX&quot;</span><span class="p">:</span> <span class="n">interpolate_strain</span><span class="p">(</span><span class="n">eps_xx</span><span class="p">),</span>
-    <span class="s2">&quot;YY&quot;</span><span class="p">:</span> <span class="n">interpolate_strain</span><span class="p">(</span><span class="n">eps_yy</span><span class="p">),</span>
-    <span class="s2">&quot;ZZ&quot;</span><span class="p">:</span> <span class="n">interpolate_strain</span><span class="p">(</span><span class="n">eps_zz</span><span class="p">),</span>
-    <span class="s2">&quot;YZ&quot;</span><span class="p">:</span> <span class="n">interpolate_strain</span><span class="p">(</span><span class="n">eps_yz</span><span class="p">),</span>
-    <span class="s2">&quot;XZ&quot;</span><span class="p">:</span> <span class="n">interpolate_strain</span><span class="p">(</span><span class="n">eps_xz</span><span class="p">),</span>
-    <span class="s2">&quot;XY&quot;</span><span class="p">:</span> <span class="n">interpolate_strain</span><span class="p">(</span><span class="n">eps_xy</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c1"># Configuration de la visualisation</span>
-<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="n">warped</span> <span class="o">=</span> <span class="n">u_grid</span><span class="o">.</span><span class="n">warp_by_vector</span><span class="p">(</span><span class="s2">&quot;u&quot;</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Pas de déformation pour visualiser les déformations</span>
-
-<span class="n">dargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span> <span class="n">show_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># Fonction pour ajouter un sous-plot</span>
-<span class="k">def</span> <span class="nf">add_subplot</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">component</span><span class="p">):</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
-    <span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Epsilon_</span><span class="si">{</span><span class="n">component</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">strain_components</span><span class="p">[</span><span class="n">component</span><span class="p">]</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
-    <span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epsilon_</span><span class="si">{</span><span class="n">component</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
-    <span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epsilon </span><span class="si">{</span><span class="n">component</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-
-<span class="c1"># Création des sous-plots pour chaque composante</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">component</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s2">&quot;XX&quot;</span><span class="p">,</span> <span class="s2">&quot;YY&quot;</span><span class="p">,</span> <span class="s2">&quot;ZZ&quot;</span><span class="p">,</span> <span class="s2">&quot;YZ&quot;</span><span class="p">,</span> <span class="s2">&quot;XZ&quot;</span><span class="p">,</span> <span class="s2">&quot;XY&quot;</span><span class="p">]):</span>
-    <span class="n">add_subplot</span><span class="p">(</span><span class="n">i</span> <span class="o">//</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span><span class="p">,</span> <span class="n">component</span><span class="p">)</span>
-
-<span class="c1"># Configuration finale</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="s1">&#39;iso&#39;</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span>
-
-<span class="c1"># Ajout d&#39;une barre de couleur globale</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_scalar_bar</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Strain&quot;</span><span class="p">,</span> <span class="n">n_labels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label_font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">title_font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">position_x</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">position_y</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-
-<span class="c1"># Affichage</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "623281d13b6f4148b72c6ed842505010", "version_major": 2, "version_minor": 0}</script></div>
-</div>
 </section>
 <section id="visualisation-des-composantes-du-tenseur-des-contraintes">
 <h3>Visualisation des composantes du tenseur des contraintes<a class="headerlink" href="#visualisation-des-composantes-du-tenseur-des-contraintes" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculer le tenseur des contraintes</span>
-<span class="n">sig</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">(</span><span class="n">uh</span><span class="p">)</span>  <span class="c1"># sigma est une fonction définie précédemment pour calculer les contraintes</span>
-
-<span class="c1"># Extraire les composantes du tenseur des contraintes</span>
-<span class="n">sig_xx</span><span class="p">,</span> <span class="n">sig_xy</span><span class="p">,</span> <span class="n">sig_xz</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">sig</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">sig</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">sig_yy</span><span class="p">,</span> <span class="n">sig_yz</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">sig</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">sig_zz</span> <span class="o">=</span> <span class="n">sig</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-
-<span class="c1"># Définir l&#39;espace fonctionnel pour les contraintes (éléments discontinus d&#39;ordre 0)</span>
-<span class="n">V_sig</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">functionspace</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;DG&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-
-<span class="c1"># Fonction pour interpoler les composantes de contrainte</span>
-<span class="k">def</span> <span class="nf">interpolate_stress</span><span class="p">(</span><span class="n">sig_component</span><span class="p">):</span>
-    <span class="n">expr</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Expression</span><span class="p">(</span><span class="n">sig_component</span><span class="p">,</span> <span class="n">V_sig</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">interpolation_points</span><span class="p">())</span>
-    <span class="n">stress</span> <span class="o">=</span> <span class="n">fem</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">V_sig</span><span class="p">)</span>
-    <span class="n">stress</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">stress</span>
-
-<span class="c1"># Interpoler chaque composante de contrainte</span>
-<span class="n">stress_xx</span> <span class="o">=</span> <span class="n">interpolate_stress</span><span class="p">(</span><span class="n">sig_xx</span><span class="p">)</span>
-<span class="n">stress_yy</span> <span class="o">=</span> <span class="n">interpolate_stress</span><span class="p">(</span><span class="n">sig_yy</span><span class="p">)</span>
-<span class="n">stress_zz</span> <span class="o">=</span> <span class="n">interpolate_stress</span><span class="p">(</span><span class="n">sig_zz</span><span class="p">)</span>
-<span class="n">stress_yz</span> <span class="o">=</span> <span class="n">interpolate_stress</span><span class="p">(</span><span class="n">sig_yz</span><span class="p">)</span>
-<span class="n">stress_xz</span> <span class="o">=</span> <span class="n">interpolate_stress</span><span class="p">(</span><span class="n">sig_xz</span><span class="p">)</span>
-<span class="n">stress_xy</span> <span class="o">=</span> <span class="n">interpolate_stress</span><span class="p">(</span><span class="n">sig_xy</span><span class="p">)</span>
-
-<span class="c1"># Configuration de la visualisation</span>
-<span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># Créer un plotter avec une grille 2x3</span>
-
-<span class="n">dargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span>
-    <span class="n">show_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="c1"># Fonction pour ajouter un sous-plot</span>
-<span class="k">def</span> <span class="nf">add_subplot</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">stress_component</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
-    <span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="n">title</span><span class="p">]</span> <span class="o">=</span> <span class="n">stress_component</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
-    <span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">)</span>    
-    <span class="n">pl</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-
-<span class="c1"># Ajouter chaque composante de contrainte comme un sous-plot</span>
-<span class="n">add_subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stress_xx</span><span class="p">,</span> <span class="s2">&quot;Sigma XX&quot;</span><span class="p">)</span>
-<span class="n">add_subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stress_yy</span><span class="p">,</span> <span class="s2">&quot;Sigma YY&quot;</span><span class="p">)</span>
-<span class="n">add_subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">stress_zz</span><span class="p">,</span> <span class="s2">&quot;Sigma ZZ&quot;</span><span class="p">)</span>
-<span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stress_yz</span><span class="p">,</span> <span class="s2">&quot;Sigma YZ&quot;</span><span class="p">)</span>
-<span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stress_xz</span><span class="p">,</span> <span class="s2">&quot;Sigma XZ&quot;</span><span class="p">)</span>
-<span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">stress_xy</span><span class="p">,</span> <span class="s2">&quot;Sigma XY&quot;</span><span class="p">)</span>
-
-<span class="c1"># Configuration finale de la visualisation</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>  <span class="c1"># Lier les vues pour une navigation synchronisée</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="s1">&#39;iso&#39;</span>  <span class="c1"># Vue isométrique</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span>  <span class="c1"># Couleur de fond grise</span>
-
-<span class="c1"># Ajout d&#39;une barre de couleur globale</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_scalar_bar</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Contrainte (Pa)&quot;</span><span class="p">,</span> <span class="n">n_labels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label_font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">title_font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">position_x</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">position_y</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-
-<span class="c1"># Afficher la visualisation</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5b0957f6cb5d48e2884b7ea6aa567f74", "version_major": 2, "version_minor": 0}</script></div>
-</div>
 </section>
 <section id="calcul-des-contraintes-de-von-mises">
 <h3>Calcul des contraintes de von Mises<a class="headerlink" href="#calcul-des-contraintes-de-von-mises" title="Link to this heading">#</a></h3>
@@ -1277,48 +714,7 @@ C = 1005309649.1487346 kg.m^2/s
 </section>
 <section id="visualisation-des-contraintes-de-von-mises">
 <h3>Visualisation des contraintes de von Mises<a class="headerlink" href="#visualisation-des-contraintes-de-von-mises" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Créez une nouvelle instance de Plotter</span>
-<span class="c1"># Ajout des données de contrainte de von Mises au maillage déformé</span>
-<span class="n">warped</span><span class="o">.</span><span class="n">cell_data</span><span class="p">[</span><span class="s2">&quot;VonMises&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stresses</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">array</span>
-<span class="c1"># Définition de &quot;VonMises&quot; comme scalaire actif pour la visualisation</span>
-<span class="n">warped</span><span class="o">.</span><span class="n">set_active_scalars</span><span class="p">(</span><span class="s2">&quot;VonMises&quot;</span><span class="p">)</span>
-
-<span class="c1"># Création d&#39;une nouvelle instance de Plotter PyVista</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
-
-<span class="c1"># Ajout du maillage déformé avec la contrainte de von Mises</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">warped</span><span class="p">,</span> 
-           <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span>  <span class="c1"># Utilisation de la carte de couleurs &quot;jet&quot;</span>
-           <span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Ne pas afficher les arêtes du maillage</span>
-           <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span>
-               <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;von Mises (MPa)&quot;</span><span class="p">,</span>  <span class="c1"># Titre de la barre de couleur</span>
-               <span class="s2">&quot;title_font_size&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>  <span class="c1"># Taille de la police du titre</span>
-               <span class="s2">&quot;label_font_size&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>  <span class="c1"># Taille de la police des étiquettes</span>
-               <span class="s2">&quot;shadow&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># Ajout d&#39;une ombre à la barre de couleur</span>
-               <span class="s2">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># Texte en italique</span>
-               <span class="s2">&quot;font_family&quot;</span><span class="p">:</span> <span class="s2">&quot;arial&quot;</span><span class="p">,</span>  <span class="c1"># Police Arial</span>
-               <span class="s2">&quot;vertical&quot;</span><span class="p">:</span> <span class="kc">False</span>  <span class="c1"># Barre de couleur horizontale</span>
-           <span class="p">})</span>
-
-<span class="c1"># Ajout d&#39;un titre à la visualisation</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Contraintes de von Mises&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;upper_edge&quot;</span><span class="p">)</span>
-
-<span class="c1"># Ajout des axes de coordonnées en noir</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-
-<span class="c1"># Configuration de l&#39;arrière-plan en gris</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
-
-<span class="c1"># Configuration de la caméra pour une vue optimale</span>
-<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
-
-<span class="c1"># Affichage de la visualisation</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "9730513279fd4721b3d95ec39d850c52", "version_major": 2, "version_minor": 0}</script></div>
 </div>
@@ -1328,7 +724,12 @@ C = 1005309649.1487346 kg.m^2/s
 <h2>Analyses des résultats<a class="headerlink" href="#analyses-des-resultats" title="Link to this heading">#</a></h2>
 <section id="calcul-des-valeurs-maximales">
 <h3>Calcul des valeurs maximales<a class="headerlink" href="#calcul-des-valeurs-maximales" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraction de la valeur maximale de la rotation RZ</span>
 <span class="n">max_rotation_z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rotation_z</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">array</span><span class="p">))</span>
@@ -1350,47 +751,9 @@ C = 1005309649.1487346 kg.m^2/s
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcul du moment d&#39;inertie polaire J pour une section circulaire</span>
-<span class="n">J</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">R</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-
-<span class="c1"># Calcul de l&#39;angle de torsion théorique</span>
-<span class="n">theta_theoretical</span> <span class="o">=</span> <span class="n">C</span> <span class="o">*</span> <span class="n">h</span> <span class="o">/</span> <span class="p">(</span><span class="n">mu</span> <span class="o">*</span> <span class="n">J</span><span class="p">)</span>
-
-<span class="c1"># Affichage des résultats</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Moment d&#39;inertie polaire J : </span><span class="si">{</span><span class="n">J</span><span class="si">:</span><span class="s2">.6e</span><span class="si">}</span><span class="s2"> m^4&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Angle de torsion théorique θ : </span><span class="si">{</span><span class="n">theta_theoretical</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> radians&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Angle de torsion théorique θ : </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">theta_theoretical</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> degrés&quot;</span><span class="p">)</span>
-
-<span class="c1"># Comparaison avec la rotation maximale calculée numériquement</span>
-<span class="k">if</span> <span class="s1">&#39;max_rotation_z&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
-    <span class="n">relative_error</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">max_rotation_z</span> <span class="o">-</span> <span class="n">theta_theoretical</span><span class="p">)</span> <span class="o">/</span> <span class="n">theta_theoretical</span> <span class="o">*</span> <span class="mi">100</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Comparaison avec la simulation numérique en RZ:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rotation Z maximale simulée : </span><span class="si">{</span><span class="n">max_rotation_z</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> radians&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rotation Z maximale simulée : </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">max_rotation_z</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> degrés&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur relative : </span><span class="si">{</span><span class="n">relative_error_Z</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Comparaison avec la simulation numérique en norme:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Norme de rotation maximale : </span><span class="si">{</span><span class="n">max_rotation_norm</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> radians&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Norme de rotation maximale : </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">max_rotation_norm</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> degrés&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur relative : </span><span class="si">{</span><span class="n">relative_error_N</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Attention : La rotation maximale simulée n&#39;a pas été calculée précédemment.&quot;</span><span class="p">)</span>
-
-<span class="c1"># Analyse des autres composantes</span>
-<span class="n">max_rotation_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rotation_x</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">array</span><span class="p">))</span>
-<span class="n">max_rotation_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rotation_y</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">array</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Valeurs maximales des composantes de rotation :&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RX max : </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">max_rotation_x</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> degrés&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RX max  : </span><span class="si">{</span><span class="n">max_rotation_x</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> radians&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RY max : </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">max_rotation_y</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> degrés&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RY max  : </span><span class="si">{</span><span class="n">max_rotation_y</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> radians&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Moment d&#39;inertie polaire J : 6.283185e-04 m^4
 Angle de torsion théorique θ : 20.000000 radians
@@ -1411,92 +774,6 @@ RX max : 124.69 degrés
 RX max  : 2.176298 radians
 RY max : 122.15 degrés
 RY max  : 2.131950 radians
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraction des valeurs maximales de rotation pour chaque composante</span>
-<span class="n">max_rotation_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rotation_x</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">array</span><span class="p">))</span>
-<span class="n">max_rotation_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rotation_y</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">array</span><span class="p">))</span>
-<span class="n">max_rotation_z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rotation_z</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">array</span><span class="p">))</span>
-
-<span class="c1"># Affichage des résultats</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valeurs maximales des composantes de rotation :&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RX max : </span><span class="si">{</span><span class="n">max_rotation_x</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> radians (</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">max_rotation_x</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> degrés)&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RY max : </span><span class="si">{</span><span class="n">max_rotation_y</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> radians (</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">max_rotation_y</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> degrés)&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RZ max : </span><span class="si">{</span><span class="n">max_rotation_z</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> radians (</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">max_rotation_z</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> degrés)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Calcul et affichage de la norme de rotation maximale</span>
-<span class="n">max_rotation_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">max_rotation_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">max_rotation_y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">max_rotation_z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Norme de rotation maximale : </span><span class="si">{</span><span class="n">max_rotation_norm</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> radians (</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">max_rotation_norm</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> degrés)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Comparaison avec l&#39;angle de torsion théorique (si disponible)</span>
-<span class="k">if</span> <span class="s1">&#39;theta_theoretical&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Angle de torsion théorique : </span><span class="si">{</span><span class="n">theta_theoretical</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> radians (</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">theta_theoretical</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> degrés)&quot;</span><span class="p">)</span>
-    
-    <span class="c1"># Calcul de l&#39;erreur relative</span>
-    <span class="n">relative_error</span> <span class="o">=</span> <span class="p">(</span><span class="n">max_rotation_z</span> <span class="o">-</span> <span class="n">theta_theoretical</span><span class="p">)</span> <span class="o">/</span> <span class="n">theta_theoretical</span> <span class="o">*</span> <span class="mi">100</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur relative (RZ max vs théorie) : </span><span class="si">{</span><span class="n">relative_error</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
-
-<span class="c1"># Analyse de la contribution de chaque composante</span>
-<span class="n">total_rotation</span> <span class="o">=</span> <span class="n">max_rotation_x</span> <span class="o">+</span> <span class="n">max_rotation_y</span> <span class="o">+</span> <span class="n">max_rotation_z</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Contribution relative de chaque composante à la rotation totale :&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RX : </span><span class="si">{</span><span class="n">max_rotation_x</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">total_rotation</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RY : </span><span class="si">{</span><span class="n">max_rotation_y</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">total_rotation</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RZ : </span><span class="si">{</span><span class="n">max_rotation_z</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">total_rotation</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valeurs maximales des composantes de rotation :
-RX max : 2.176298 radians (124.69 degrés)
-RY max : 2.131950 radians (122.15 degrés)
-RZ max : 19.888688 radians (1139.54 degrés)
-
-Norme de rotation maximale : 20.120671 radians (1152.83 degrés)
-
-Angle de torsion théorique : 20.000000 radians (1145.92 degrés)
-Erreur relative (RZ max vs théorie) : -0.56%
-
-Contribution relative de chaque composante à la rotation totale :
-RX : 8.99%
-RY : 8.81%
-RZ : 82.20%
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Valeur analytique de la rotation maximale (ici, 20 radians)</span>
-<span class="n">theta_analytique</span> <span class="o">=</span> <span class="mf">20.0</span>
-
-<span class="c1"># Valeur numérique récupérée</span>
-<span class="n">theta_numerique</span> <span class="o">=</span> <span class="n">max_rotation_z</span>
-
-<span class="c1"># Calcul de l&#39;erreur absolue</span>
-<span class="n">erreur_absolue</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">theta_analytique</span> <span class="o">-</span> <span class="n">theta_numerique</span><span class="p">)</span>
-
-<span class="c1"># Calcul de l&#39;erreur relative</span>
-<span class="n">erreur_relative</span> <span class="o">=</span> <span class="n">erreur_absolue</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">theta_analytique</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
-
-<span class="c1"># Affichage des résultats</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rotation analytique maximale : </span><span class="si">{</span><span class="n">theta_analytique</span><span class="si">}</span><span class="s2"> radians&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rotation numérique maximale : </span><span class="si">{</span><span class="n">theta_numerique</span><span class="si">}</span><span class="s2"> radians&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur absolue : </span><span class="si">{</span><span class="n">erreur_absolue</span><span class="si">}</span><span class="s2"> radians&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur relative : </span><span class="si">{</span><span class="n">erreur_relative</span><span class="si">}</span><span class="s2"> %&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rotation analytique maximale : 20.0 radians
-Rotation numérique maximale : 19.888687722452723 radians
-Erreur absolue : 0.11131227754727746 radians
-Erreur relative : 0.5565613877363873 %
 </pre></div>
 </div>
 </div>
