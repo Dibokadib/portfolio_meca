@@ -163,6 +163,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="prototype.html">Problème torsion d’arbres</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Untittled</a></li>
+
 </ul>
 
     </div>
@@ -280,7 +281,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -296,6 +299,19 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Untittled</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#chapitre-1">Chapitre 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-code-interactif">Exemple de code interactif</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -308,7 +324,13 @@
   <section class="tex2jax_ignore mathjax_ignore" id="untittled">
 <h1>Untittled<a class="headerlink" href="#untittled" title="Link to this heading">#</a></h1>
 <p>hello</p>
-<div class="cell tag_hide-input docutils container">
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="chapitre-1">
+<h1>Chapitre 1<a class="headerlink" href="#chapitre-1" title="Link to this heading">#</a></h1>
+<p>Bienvenue dans ce chapitre interactif utilisant ThebeLab !</p>
+<section id="exemple-de-code-interactif">
+<h2>Exemple de code interactif<a class="headerlink" href="#exemple-de-code-interactif" title="Link to this heading">#</a></h2>
+<button title="Run code" class="thebelab-button thebe-launch-button" onclick="initThebe()">Run code</button><div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
 <span class="collapsed">Show code cell source</span>
@@ -1052,6 +1074,7 @@ if (window.Jupyter !== undefined) {
   }
 })(window);</script></span></p>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1098,6 +1121,27 @@ if (window.Jupyter !== undefined) {
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Untittled</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#chapitre-1">Chapitre 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-code-interactif">Exemple de code interactif</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
