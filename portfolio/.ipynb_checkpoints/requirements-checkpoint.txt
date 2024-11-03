@@ -1,0 +1,27 @@
+# requirements.txt
+
+# FEniCSx et dépendances
+fenics-dolfinx
+petsc4py
+mpi4py
+
+# Outils mathématiques et scientifiques
+numpy
+matplotlib
+scipy
+
+# Visualisation
+pyvista
+panel
+
+# Maillage et E/S
+gmsh
+meshio
+
+# Jupyter et widgets
+ipywidgets
+jupyter-book
+myst-nb
+
+# Autres
+ufl

@@ -1,0 +1,35 @@
+# Book settings
+title: My sample book
+author: The Jupyter Book Community
+logo: logo.png
+
+# Execution settings
+execute:
+  execute_notebooks: off
+  remove_cell_tags:
+    - remove-cell
+    - remove-input
+    - remove-output
+    - hide-cell
+    - hide-input
+    - hide-output
+
+# LaTeX settings
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Bibliography settings
+bibtex_bibfiles:
+  - references.bib
+
+# Repository settings
+repository:
+  url: https://github.com/executablebooks/jupyter-book
+  path_to_book: docs
+  branch: master
+
+# HTML settings
+html:
+  use_issues_button: true
+  use_repository_button: true
