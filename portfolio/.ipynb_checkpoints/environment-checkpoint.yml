@@ -15,3 +15,6 @@ dependencies:
   - jupyter-book
   - myst-nb
   - panel
+  - pip
+  - pip:
+    - ufl
