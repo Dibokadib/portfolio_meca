@@ -1,0 +1,17 @@
+name: fenicsx-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - fenics-dolfinx
+  - mpich
+  - pyvista
+  - numpy
+  - matplotlib
+  - scipy
+  - gmsh
+  - meshio
+  - ipywidgets
+  - jupyter-book
+  - myst-nb
+  - panel
