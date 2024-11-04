@@ -1,9 +1,0 @@
-name: my_pyvista_env
-channels:
-  - conda-forge
-dependencies:
-  - python=3.9
-  - pyvista
-  - ipyvtklink
-  - jupyterlab
-  - notebook
