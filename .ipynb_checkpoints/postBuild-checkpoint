@@ -4,5 +4,9 @@
 export PYVISTA_JUPYTER_BACKEND=panel
 echo "export PYVISTA_JUPYTER_BACKEND=panel" >> ~/.bashrc
 
-# Installation des extensions Jupyter nécessaires
+# Installation et activation des extensions Jupyter
+jupyter contrib nbextension install --user
 jupyter nbextension enable --py widgetsnbextension
+
+# Configuration pour PyVista
+jupyter labextension install @pyviz/jupyterlab_pyviz

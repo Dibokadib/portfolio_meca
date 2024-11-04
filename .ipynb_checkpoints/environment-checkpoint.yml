@@ -10,9 +10,10 @@ dependencies:
   - h5py
   - seaborn
   - pandas
-  - panel
-  - ipywidgets
   - tqdm
   - pip
+  - notebook
+  - jupyter_contrib_nbextensions
+  - ipywidgets
   - pip:
     - jupyter-offlinenotebook
