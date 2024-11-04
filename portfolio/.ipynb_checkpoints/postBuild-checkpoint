@@ -1,2 +1,2 @@
 #!/bin/bash
-python -m ipykernel install --user --name fenicsx-env --display-name "FEniCS Environment"
+jupyter nbextension enable --py --sys-prefix ipyvtklink
