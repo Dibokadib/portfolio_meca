@@ -1,0 +1,11 @@
+name: myenv  # Nom de l'environnement
+channels:
+  - defaults
+dependencies:
+  - python=3.10  # Spécifiez la version de Python
+  - jupyter
+  - pyvista
+  - ipyvtklink
+  - pip  # Inclure pip pour installer des paquets via requirements.txt si nécessaire
+  - pip:
+      - some-pip-package  # Remplacez par les paquets Python nécessaires

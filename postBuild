@@ -1,3 +1,10 @@
 #!/bin/bash
-pip install -r requirements.txt  # Installe les dépendances listées dans requirements.txt
-jupyter nbextension enable --py --sys-prefix ipyvtklink  # Active ipyvtklink
+
+# Créez l'environnement à partir de environment.yml
+conda env create -f environment.yml
+
+# Activez l'environnement
+source activate myenv  # Utilisez le nom de l'environnement que vous avez spécifié
+
+# Activez les extensions Jupyter si nécessaire
+jupyter nbextension enable --py --sys-prefix ipyvtklink
