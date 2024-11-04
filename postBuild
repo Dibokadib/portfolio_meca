@@ -1,12 +1,17 @@
 #!/bin/bash
 
+# Mettez à jour conda
+conda update -n base -c conda-forge conda -y
+
 # Créez l'environnement à partir de environment.yml
 conda env create -f environment.yml
 
 # Activez l'environnement
-# L'activation d'un environnement conda dans un script peut nécessiter une méthode différente
-# Dans un script non interactif, vous pouvez utiliser conda run
+source activate my_pyvista_env  # Utilisez le nom de l'environnement que vous avez spécifié
+
+# Vérifiez que Jupyter et les extensions sont installés
+conda list jupyter nbextension widgetsnbextension
 
 # Activez les extensions Jupyter
-conda run -n my_pyvista_env jupyter nbextension enable --py --sys-prefix ipyvtklink
-conda run -n my_pyvista_env jupyter nbextension enable --py widgetsnbextension
+jupyter nbextension enable --py --sys-prefix ipyvtklink
+jupyter nbextension enable --py --sys-prefix widgetsnbextension  # Activez également widgetsnbextension
