@@ -33,3 +33,6 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+launch_buttons:
+  binderhub_url: "https://mybinder.org"  # L'URL de votre BinderHub (par exemple, https://mybinder.org)
