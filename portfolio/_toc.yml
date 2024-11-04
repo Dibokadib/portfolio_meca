@@ -4,6 +4,4 @@
 format: jb-book
 root: intro
 chapters:
-- file: prototype
-- file: Untitled
-- file: chap1
+- file: test
