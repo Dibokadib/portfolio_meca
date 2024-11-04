@@ -6,15 +6,5 @@ dependencies:
   - fenics-dolfinx
   - mpich
   - pyvista
-  - numpy
-  - matplotlib
-  - scipy
-  - gmsh
-  - meshio
-  - ipywidgets
-  - jupyter-book
-  - myst-nb
-  - panel
-  - pip
-  - pip:
-    - ufl
+  - ipykernel
+  - jupyter
