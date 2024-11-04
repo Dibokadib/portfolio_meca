@@ -1,2 +1,3 @@
 #!/bin/bash
-jupyter nbextension enable --py --sys-prefix ipyvtklink
+pip install pyvista  # Installe PyVista
+jupyter nbextension enable --py --sys-prefix ipyvtklink  # Active ipyvtklink
