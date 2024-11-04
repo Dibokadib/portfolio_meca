@@ -1,5 +1,16 @@
 #!/bin/bash
 
-# Activation des extensions Jupyter
+# Installation de xvfb
+apt-get update && apt-get install -y xvfb
+
+# Configuration de xvfb
+Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+export DISPLAY=:99
+
+# Installation des extensions Jupyter
 jupyter nbextension enable --py widgetsnbextension
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
+
+# Configuration de PyVista pour utiliser le backend trame
+echo "PYVISTA_TRAME_SERVER_PROXY_PREFIX = '/proxy/{port}'" >> ~/.bashrc
+echo "export PYVISTA_TRAME_SERVER_PROXY_PREFIX" >> ~/.bashrc

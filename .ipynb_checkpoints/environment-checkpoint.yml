@@ -3,10 +3,11 @@ channels:
   - conda-forge
 dependencies:
   - python=3.10
-  - jupyterlab
+  - pyvista
   - ipywidgets
   - nodejs
-  - pyvista
+  - vtk
+  - trame
+  - trame-vtk
+  - trame-vuetify
   - pip
-  - pip:
-    - jupyter-offlinenotebook
