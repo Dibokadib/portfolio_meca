@@ -1,17 +1,9 @@
 #!/bin/bash
 
-# Mettez à jour conda
-conda update -n base -c conda-forge conda -y
-
-# Créez l'environnement à partir de environment.yml
-conda env create -f environment.yml
-
-# Activez l'environnement
-source activate my_pyvista_env  # Utilisez le nom de l'environnement que vous avez spécifié
-
-# Vérifiez que Jupyter et les extensions sont installés
-conda list jupyter nbextension widgetsnbextension
-
 # Activez les extensions Jupyter
 jupyter nbextension enable --py --sys-prefix ipyvtklink
-jupyter nbextension enable --py --sys-prefix widgetsnbextension  # Activez également widgetsnbextension
+jupyter nbextension enable --py --sys-prefix widgetsnbextension
+
+# Installez et activez les extensions JupyterLab
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+jupyter labextension install @pyviz/jupyterlab_pyviz
