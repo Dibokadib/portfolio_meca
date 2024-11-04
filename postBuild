@@ -1,9 +1,15 @@
 #!/bin/bash
 
-# Activez les extensions Jupyter
-jupyter nbextension enable --py --sys-prefix ipyvtklink
-jupyter nbextension enable --py --sys-prefix widgetsnbextension
+# Installation de xvfb
+apt-get update && apt-get install -y xvfb
 
-# Installez et activez les extensions JupyterLab
+# Configuration de xvfb
+Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+export DISPLAY=:99
+
+# Installation des extensions Jupyter
+jupyter nbextension enable --py widgetsnbextension
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
-jupyter labextension install @pyviz/jupyterlab_pyviz
+
+# Installation de trame pour le backend notebook de PyVista
+pip install trame

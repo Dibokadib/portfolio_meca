@@ -3,9 +3,9 @@ channels:
   - conda-forge
 dependencies:
   - python=3.10
-  - jupyterlab
-  - notebook
   - pyvista
-  - ipyvtklink
   - ipywidgets
   - nodejs
+  - pip
+  - pip:
+    - trame
