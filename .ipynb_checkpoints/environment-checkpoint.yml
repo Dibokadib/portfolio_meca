@@ -1,19 +1,11 @@
-name: fenics-env
+name: base
 channels:
   - conda-forge
 dependencies:
   - python=3.10
-  - fenics-dolfinx>=0.9.0
-  - pyvista>=0.43.0
-  - jupyter-book
-  - meshio
-  - h5py
-  - seaborn
-  - pandas
-  - tqdm
-  - pip
-  - notebook
-  - jupyter_contrib_nbextensions
+  - pyvista
   - ipywidgets
+  - nodejs
+  - pip
   - pip:
-    - jupyter-offlinenotebook
+    - trame

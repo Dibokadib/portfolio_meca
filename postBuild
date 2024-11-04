@@ -1,12 +1,15 @@
 #!/bin/bash
 
-# Configuration de PyVista pour l'environnement Binder
-export PYVISTA_JUPYTER_BACKEND=panel
-echo "export PYVISTA_JUPYTER_BACKEND=panel" >> ~/.bashrc
+# Installation de xvfb
+apt-get update && apt-get install -y xvfb
 
-# Installation et activation des extensions Jupyter
-jupyter contrib nbextension install --user
+# Configuration de xvfb
+Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+export DISPLAY=:99
+
+# Installation des extensions Jupyter
 jupyter nbextension enable --py widgetsnbextension
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
-# Configuration pour PyVista
-jupyter labextension install @pyviz/jupyterlab_pyviz
+# Installation de trame pour le backend notebook de PyVista
+pip install trame
