@@ -6,6 +6,7 @@ logo: logo.png
 # Execution settings
 execute:
   execute_notebooks: off
+    
   remove_cell_tags:
     - remove-cell
     - remove-input
