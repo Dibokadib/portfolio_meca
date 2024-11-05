@@ -5,6 +5,10 @@ dependencies:
   - python=3.10
   - fenics-dolfinx
   - pyvista
+  - gmsh
+  - meshio
+  - panel
+  - myst-nb
   - ipywidgets
   - nodejs
   - pip
