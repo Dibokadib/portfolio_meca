@@ -10,6 +10,36 @@ kernelspec:
   language: python
   name: python3
 ---
+# What is an inverse problem
+
+## Solving an inverse problem
+
+### Direct methods
+
+
+````{admonition} Example: *Inverting a rank-deficient matrix.*
+Consider the matrix 
+
+$$
+K = \left(\begin{matrix} 1 & 1\\ 2 & 2 \end{matrix}\right).
+$$
+
+Obviously this matrix is singular, so there is no way to define the inverse in the usual sense. However, modifying the matrix slightly
+
+$$
+\widetilde{K} = \left(\begin{matrix} 1 + \alpha & 1\\ 2 & 2 + \alpha\end{matrix}\right),
+$$
+
+allows us to compute the inverse. Indeed, given $f = K\overline{u}$ with $\overline{u} = (1,2)$ we have $f = (3,6)$. Applying the inverse of $\widetilde{K}$ we get $\widetilde{u} \approx (1,2)$. The corresponding equations are visualized in {numref}`matrix_inversion`.
+
+```{glue:figure} matrix_inversion
+:figwidth: 300px
+:name: "matrix_inversion"
+
+Original and regularized equations. We see that the regularized equations have a unique solution, but this solution is slightly biased towards the origin.
+```
+
+````
 
 ```{code-cell} ipython3
 
