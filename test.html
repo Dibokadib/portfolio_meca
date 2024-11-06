@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>test 10 &#8212; My sample book</title>
+    <title>Pile &#8212; My sample book</title>
   
   
   
@@ -169,8 +169,10 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">test 10</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pile</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prototype.html">test 11</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Untitled.html">Binder 0</a></li>
 
 </ul>
 
@@ -380,7 +382,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>test 10</h1>
+    <h1>Pile</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,6 +393,16 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-code-interactif">Exemple de code interactif</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupytext-text-representation-extension-md-format-name-myst-format-version-0-9-jupytext-version-1-5-2-kernelspec-display-name-python-3-language-python-name-python3">jupytext:
+text_representation:
+extension: .md
+format_name: myst
+format_version: ‘0.9’
+jupytext_version: 1.5.2
+kernelspec:
+display_name: Python 3
+language: python
+name: python3</a></li>
 </ul>
             </nav>
         </div>
@@ -402,15 +414,95 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="test-10">
-<h1>test 10<a class="headerlink" href="#test-10" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pile">
+<h1>Pile<a class="headerlink" href="#pile" title="Link to this heading">#</a></h1>
 <p>Bienvenue dans ce chapitre interactif utilisant ThebeLab !</p>
 <section id="exemple-de-code-interactif">
 <h2>Exemple de code interactif<a class="headerlink" href="#exemple-de-code-interactif" title="Link to this heading">#</a></h2>
-<button title="Run code" class="thebelab-button thebe-launch-button" onclick="initThebe()">Run code</button><div class="cell tag_thebe-init docutils container">
+<button title="Run code" class="thebelab-button thebe-launch-button" onclick="initThebe()">Run code</button></section>
+<hr class="docutils" />
+<section id="jupytext-text-representation-extension-md-format-name-myst-format-version-0-9-jupytext-version-1-5-2-kernelspec-display-name-python-3-language-python-name-python3">
+<h2>jupytext:
+text_representation:
+extension: .md
+format_name: myst
+format_version: ‘0.9’
+jupytext_version: 1.5.2
+kernelspec:
+display_name: Python 3
+language: python
+name: python3<a class="headerlink" href="#jupytext-text-representation-extension-md-format-name-myst-format-version-0-9-jupytext-version-1-5-2-kernelspec-display-name-python-3-language-python-name-python3" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Direct methods</span>
+<span class="n">In</span> <span class="n">some</span> <span class="n">special</span> <span class="n">cases</span> <span class="n">we</span> <span class="n">can</span> <span class="n">derive</span> <span class="n">an</span> <span class="n">explicit</span> <span class="n">expression</span> <span class="k">for</span> <span class="p">(</span><span class="n">an</span> <span class="n">approximation</span><span class="p">)</span> <span class="n">of</span> <span class="n">the</span> <span class="n">solution</span> <span class="n">of</span> <span class="err">$</span><span class="n">K</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span><span class="err">$</span><span class="o">.</span> <span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="k">if</span> <span class="err">$</span><span class="n">K</span><span class="err">$</span> <span class="n">represents</span> <span class="n">a</span> <span class="n">quadratic</span> <span class="n">equation</span> <span class="ow">in</span> <span class="n">one</span> <span class="n">variable</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">system</span> <span class="n">of</span> <span class="n">linear</span> <span class="n">equations</span><span class="o">.</span> <span class="n">In</span> <span class="n">other</span> <span class="n">cases</span><span class="p">,</span> <span class="n">we</span> <span class="n">may</span> <span class="n">have</span> <span class="n">an</span> <span class="n">explicit</span> <span class="n">expression</span> <span class="k">for</span> <span class="n">the</span> <span class="n">inverse</span> <span class="n">of</span> <span class="n">a</span> <span class="n">slightly</span> <span class="n">modified</span> <span class="n">forward</span> <span class="n">operator</span><span class="p">,</span> <span class="err">$</span>\<span class="n">widetilde</span><span class="p">{</span><span class="n">K</span><span class="p">}</span><span class="err">$</span><span class="o">.</span> <span class="n">This</span> <span class="n">modified</span> <span class="n">operator</span> <span class="n">arises</span> <span class="n">when</span> <span class="n">the</span> <span class="n">original</span> <span class="n">inverse</span> <span class="n">problem</span> <span class="ow">is</span> <span class="n">ill</span><span class="o">-</span><span class="n">posed</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">a</span> <span class="n">modified</span> <span class="n">inverse</span> <span class="n">problem</span> <span class="err">$</span>\<span class="n">widetilde</span><span class="p">{</span><span class="n">K</span><span class="p">}(</span><span class="n">u</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span><span class="err">$</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">well</span><span class="o">-</span><span class="n">posed</span><span class="o">.</span> <span class="n">The</span> <span class="n">hope</span><span class="p">,</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">latter</span> <span class="n">case</span><span class="p">,</span> <span class="ow">is</span> <span class="n">that</span> <span class="err">$</span>\<span class="n">widetilde</span><span class="p">{</span><span class="n">K</span><span class="p">}</span><span class="err">$</span> <span class="n">approximates</span> <span class="err">$</span><span class="n">K</span><span class="err">$</span> <span class="n">well</span> <span class="k">for</span> <span class="n">the</span> <span class="k">class</span> <span class="nc">of</span> <span class="n">solutions</span> <span class="n">we</span> <span class="n">are</span> <span class="n">looking</span> <span class="k">for</span><span class="o">.</span>
+
+<span class="err">````</span><span class="p">{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Example</span><span class="p">:</span> <span class="o">*</span><span class="n">Inverting</span> <span class="n">a</span> <span class="n">rank</span><span class="o">-</span><span class="n">deficient</span> <span class="n">matrix</span><span class="o">.*</span>
+<span class="n">Consider</span> <span class="n">the</span> <span class="n">matrix</span> 
+
+<span class="err">$$</span>
+<span class="n">K</span> <span class="o">=</span> \<span class="n">left</span><span class="p">(</span>\<span class="n">begin</span><span class="p">{</span><span class="n">matrix</span><span class="p">}</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="mi">1</span>\\ <span class="mi">2</span> <span class="o">&amp;</span> <span class="mi">2</span> \<span class="n">end</span><span class="p">{</span><span class="n">matrix</span><span class="p">}</span>\<span class="n">right</span><span class="p">)</span><span class="o">.</span>
+<span class="err">$$</span>
+
+<span class="n">Obviously</span> <span class="n">this</span> <span class="n">matrix</span> <span class="ow">is</span> <span class="n">singular</span><span class="p">,</span> <span class="n">so</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">way</span> <span class="n">to</span> <span class="n">define</span> <span class="n">the</span> <span class="n">inverse</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">usual</span> <span class="n">sense</span><span class="o">.</span> <span class="n">However</span><span class="p">,</span> <span class="n">modifying</span> <span class="n">the</span> <span class="n">matrix</span> <span class="n">slightly</span>
+
+<span class="err">$$</span>
+\<span class="n">widetilde</span><span class="p">{</span><span class="n">K</span><span class="p">}</span> <span class="o">=</span> \<span class="n">left</span><span class="p">(</span>\<span class="n">begin</span><span class="p">{</span><span class="n">matrix</span><span class="p">}</span> <span class="mi">1</span> <span class="o">+</span> \<span class="n">alpha</span> <span class="o">&amp;</span> <span class="mi">1</span>\\ <span class="mi">2</span> <span class="o">&amp;</span> <span class="mi">2</span> <span class="o">+</span> \<span class="n">alpha</span>\<span class="n">end</span><span class="p">{</span><span class="n">matrix</span><span class="p">}</span>\<span class="n">right</span><span class="p">),</span>
+<span class="err">$$</span>
+
+<span class="n">allows</span> <span class="n">us</span> <span class="n">to</span> <span class="n">compute</span> <span class="n">the</span> <span class="n">inverse</span><span class="o">.</span> <span class="n">Indeed</span><span class="p">,</span> <span class="n">given</span> <span class="err">$</span><span class="n">f</span> <span class="o">=</span> <span class="n">K</span>\<span class="n">overline</span><span class="p">{</span><span class="n">u</span><span class="p">}</span><span class="err">$</span> <span class="k">with</span> <span class="err">$</span>\<span class="n">overline</span><span class="p">{</span><span class="n">u</span><span class="p">}</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="err">$</span> <span class="n">we</span> <span class="n">have</span> <span class="err">$</span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span><span class="err">$</span><span class="o">.</span> <span class="n">Applying</span> <span class="n">the</span> <span class="n">inverse</span> <span class="n">of</span> <span class="err">$</span>\<span class="n">widetilde</span><span class="p">{</span><span class="n">K</span><span class="p">}</span><span class="err">$</span> <span class="n">we</span> <span class="n">get</span> <span class="err">$</span>\<span class="n">widetilde</span><span class="p">{</span><span class="n">u</span><span class="p">}</span> \<span class="n">approx</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="err">$</span><span class="o">.</span> <span class="n">The</span> <span class="n">corresponding</span> <span class="n">equations</span> <span class="n">are</span> <span class="n">visualized</span> <span class="ow">in</span> <span class="p">{</span><span class="n">numref</span><span class="p">}</span><span class="err">`</span><span class="n">matrix_inversion</span><span class="err">`</span><span class="o">.</span>
+
+<span class="err">```</span><span class="p">{</span><span class="n">glue</span><span class="p">:</span><span class="n">figure</span><span class="p">}</span> <span class="n">matrix_inversion</span>
+<span class="p">:</span><span class="n">figwidth</span><span class="p">:</span> <span class="mi">300</span><span class="n">px</span>
+<span class="p">:</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;matrix_inversion&quot;</span>
+
+<span class="n">Original</span> <span class="ow">and</span> <span class="n">regularized</span> <span class="n">equations</span><span class="o">.</span> <span class="n">We</span> <span class="n">see</span> <span class="n">that</span> <span class="n">the</span> <span class="n">regularized</span> <span class="n">equations</span> <span class="n">have</span> <span class="n">a</span> <span class="n">unique</span> <span class="n">solution</span><span class="p">,</span> <span class="n">but</span> <span class="n">this</span> <span class="n">solution</span> <span class="ow">is</span> <span class="n">slightly</span> <span class="n">biased</span> <span class="n">towards</span> <span class="n">the</span> <span class="n">origin</span><span class="o">.</span>
+<span class="err">```</span>
+
+<span class="err">````</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">u1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">u2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">1e-1</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">u1</span><span class="p">,</span><span class="mi">3</span><span class="o">-</span><span class="n">u1</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$Ku=f$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">u1</span><span class="p">,</span><span class="mi">3</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">u1</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\widetilde</span><span class="si">{K}</span><span class="s1">u=f$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">u1</span><span class="p">,(</span><span class="mi">6</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">u1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="n">alpha</span><span class="p">),</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$u_1$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$u_2$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;matrix_inversion&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a28d5956288df0e1d69b6e317bc28a018119fc0032c7fde0cd36771b6042836a.png" src="_images/a28d5956288df0e1d69b6e317bc28a018119fc0032c7fde0cd36771b6042836a.png" />
+</div>
+</div>
+<div class="cell tag_thebe-init docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 
 <span class="k">def</span> <span class="nf">plot_sine</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
@@ -423,11 +515,12 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="n">plot_sine</span><span class="p">()</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;quadratic&quot;</span><span class="p">,</span> <span class="n">plt</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/00b7ad4bc7da7010cf206c5c209a777badde3929db4e1411bb32a73b7e4b153c.png" src="_images/00b7ad4bc7da7010cf206c5c209a777badde3929db4e1411bb32a73b7e4b153c.png" />
+<img alt="_images/e5e26223174fd3185d65f06816e07f95b2d391ce2c1c4f5623d728f5ce1291d5.png" src="_images/e5e26223174fd3185d65f06816e07f95b2d391ce2c1c4f5623d728f5ce1291d5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -574,6 +667,16 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-code-interactif">Exemple de code interactif</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupytext-text-representation-extension-md-format-name-myst-format-version-0-9-jupytext-version-1-5-2-kernelspec-display-name-python-3-language-python-name-python3">jupytext:
+text_representation:
+extension: .md
+format_name: myst
+format_version: ‘0.9’
+jupytext_version: 1.5.2
+kernelspec:
+display_name: Python 3
+language: python
+name: python3</a></li>
 </ul>
   </nav></div>
 
