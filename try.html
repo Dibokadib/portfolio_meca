@@ -60,8 +60,6 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'try';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -278,6 +276,23 @@
       
       
       
+      <li><a href="https://github.com/Dibokadib/portfolio_meca/edit/main/./try.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://github.com/Dibokadib/portfolio_meca/issues/new?title=Issue%20on%20page%20%2Ftry.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
@@ -432,20 +447,6 @@
 <h2>Solving an inverse problem<a class="headerlink" href="#solving-an-inverse-problem" title="Link to this heading">#</a></h2>
 <section id="direct-methods">
 <h3>Direct methods<a class="headerlink" href="#direct-methods" title="Link to this heading">#</a></h3>
-<div class="admonition-example-inverting-a-rank-deficient-matrix admonition">
-<p class="admonition-title">Example: <em>Inverting a rank-deficient matrix.</em></p>
-<p>Consider the matrix</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-K = \left(\begin{matrix} 1 &amp; 1\\ 2 &amp; 2 \end{matrix}\right).
-\end{split}\]</div>
-<p>Obviously this matrix is singular, so there is no way to define the inverse in the usual sense. However, modifying the matrix slightly</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\widetilde{K} = \left(\begin{matrix} 1 + \alpha &amp; 1\\ 2 &amp; 2 + \alpha\end{matrix}\right),
-\end{split}\]</div>
-<p>allows us to compute the inverse. Indeed, given <span class="math notranslate nohighlight">\(f = K\overline{u}\)</span> with <span class="math notranslate nohighlight">\(\overline{u} = (1,2)\)</span> we have <span class="math notranslate nohighlight">\(f = (3,6)\)</span>. Applying the inverse of <span class="math notranslate nohighlight">\(\widetilde{K}\)</span> we get <span class="math notranslate nohighlight">\(\widetilde{u} \approx (1,2)\)</span>. The corresponding equations are visualized in <code class="xref std std-numref docutils literal notranslate"><span class="pre">matrix_inversion</span></code>.</p>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
